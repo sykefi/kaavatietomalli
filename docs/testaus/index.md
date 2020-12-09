@@ -7,4 +7,124 @@ status: "Keskeneräinen"
 ---
 # Kaavatietomallin testaus
 
-Kesken
+Testauksessa koestettiin läpi prosessi kaavatiedon tuottamisesta, sen käsittelemisestä tiedonhallintajärjestelmässä sekä kaavatiedon esittäminen ja hyödyntäminnen loppukäyttäjän sovelluksessa. Tavoitteena oli tämän prosessin aikana tunnistaa tietomallin vahvuudet ja heikkoudet käytännön toteutuksissa. Työssä tunnistettiin useita heikkouksia, joista kuitenkin suurin osa pystyttiin korjaamaan työn aikana tai kehittämään menetelmät, miten tietomallia voidaan jatkokehittää parempaan suuntaan.
+
+## Mitä testattiin
+
+* Tietomallin mukaisen yleis- ja asemakaavatiedon tuottaminen
+* Kaavatiedon vastaanottoa ja tallentamista tietojärjestelmään
+* Kaavatiedon esittämistä, käsittelyä ja laskentaa sovelluksessa (mm. Tyvi-lomakkeen tietojen laskeminen)
+* Yksilöivät tunnisteet ja niihin liittyvä elinkaarikäsittely
+
+Testauksessa tuotettiin
+
+## Rajaukset
+
+Testauksen ulkopuolelle jätettiin:
+* Kaavan visualisointi
+* Ajantasakaavan muodostaminen
+
+# Testauksen toteutustapa ja -aika
+
+Testaus toteutettiin 9.-25.11.2020. Testauksen suoritti Ilkka Rinne, Sanna Hautala, Mikko Solismaa ja Sampo Savolainen Spatineolta sekä Pilvi Nummi (Asiantuntijat N+1). Testauksessa tehtiin seuraavat asiat:
+
+* Olemassaolevaa kaavoitustietoa digitoitiin tietomallin mukaiseen muotoon
+* Tiedonhallintajärjestelmä
+* Testauksen käyttöliittymä
+
+## Tuotetut kaavat
+
+Sparrausryhmässä kerättiin potentiaalisia kaavoja testausta varten. Näistä valikoitiin sellaiset tapaukset, jotka kattavat keskeisimmät käyttötapaukset: 
+
+1. Asemakaavan laadinta alueelle, jolle ei ole aiempaa asemakaavaa. Testauksessa käytiin läpi keskeiset vaiheet prosessista (vireilletulo, kaavaehdotus, kaavaehdotuksen tarkistaminen, hyväksytty kaava ja lainvoimainen kaava). Tähän valittiin ***Sipoon Nevas gård***
+2. Vaiheasemakaava, jossa testataan yhden kaavakohteen muutosta. Tähän valittiin ***Espoon Servinniemi***
+3. Strategisen tason yleiskaavan laadinta, joka ohjaa kaupungin rakennetun ympäristön kokonaisuuden suunnittelua. Tähän valittiin ***Tampere / Hervannan alue***
+4. Rakentamista ohjaava yleiskaava. Tähän valittiin ***Lahden Enonsaari***
+
+Lähtöaineisto oli useassa eri formaatissa. Käytössä oli kaavojen kuvat PDF-muodossa sekä vaihtelevan tasoista digitaalista aineistoa (DWG, MapInfo TAB, Shapefile).
+
+Testauksessa tuotettiin kaavoista kaavan ulkoraja, kaavakohteet ja kaavamääräykset (sekä ulkorajaan että kaavakohteisiin liittyvät).
+
+### Digitointiprosessi
+
+Digitointi tehtiin kahdessa vaiheessa: geometrian muodostainen ja ominaisuustietojen tuottaminen.
+
+Geometriat muodostettiin QGIS:in avulla digitaalisesta lähtöaineistosta. Lopputulos tallennettin GeoJSON-muodossa. QGIS ei kuitenkaan sovellu rakenteellisten kohteen ominaisuustietojen syöttämiseen. Sen sijaan ominaisuustiedot tuotettiin ohjelmistokehittimellä. Työssä käytettiin avoimen lähdekoodin versiota Visual Studio Codesta. Ohjelmistokehittimeen sai lisäosan, joka näytti muokattavan geometrian halutun taustakartan päällä. Tämä auttoi digitointiprosessissa merkittävästi, sillä kohdetta oli helppo verrata alkuperäiseen kaavaselostukseen.
+
+Lopputuloksena jokaisesta kaavasta ja kaavan versiosta tuotettiin oma hakemisto. Hakemistoon tallennettiin kaavan ulkoraja ja siihen liittyvät kaavamääräykset omaan tiedostoonsa ja kukin kaavakohde ja tähän liittyvät määräykset omiin tiedostoihinsa. Tiedostot olivat GeoJSON-muodssa FeatureCollectioneita.
+
+Tässä vaiheessa kohteilla ei ollut vielä omia tunnisteita ja linkitys kohteiden välillä perustui siihen miten geometriaan (ulkoraja tai kaavakohde) liittyvät määräykset olivat samassa tiedostossa keskenään. Lopullisen tallennuspalveluun lähetettävä tietomallin mukainen FeatureCollection-tiedosto tuotettiin python-skripti, joka loi kaikille kohteille localId:n ja tuotti linkitykset kohteiden välille. Lopputuloksena siis yksi GeoJSON-tiedosto kokonaiselle kaavalle.
+
+## Testaukseen tuotettu tietonhallintajärjestelmä
+
+Testausta varten toteutettiin tiedonhallintajärjestelmä. Järjestelmä asennettiin Spatineon pilvipalveluympäristöön testausta varten. Järjestelmä koostui kolmesta pääosasta:
+
+* Tietokanta
+* Talllennuspalvelu
+* OGC API - Features -rajapintapalvelu
+
+Tietokantana oli PostGIS. Tallennuspalvelu ja rajapintapalvelu toteutettiin NodeJS:llä.
+
+
+### Tietokanta
+
+Tietokantana käytettiin Postgresql-tietokantaa PostGIS-laajennoksella. Tietojen tallennusta varten tehtiin kolme tietokantataulua: kaavan ulkorajat, kaavakohteet ja kaavamääräykset. Kaikissa kolmessa taulussa oli samat sarakkeet: id (pääavain), created_time (tallennusaika), geom (geometriatieto) ja properties. Properties-sarake sisälsi kohteen kaikki ominaisuustiedot rakenteellisessa muodossa (jsonb-sarake).
+
+Tietokantaan tallennetuissa kohteissa linkitykset kohteiden välillä sisältävät ainoastaan `linkedFeatureId`:n. Lopulliset selaimessa käytettävät linkit luodaan vasta rajapinnan palauttamissa kohteissa.
+
+Tietokantataulujen lisäksi testattiin luoda kustakin tietokantataulusta näkymä, jossa rakenteellisen tiedon yksittäiset kentät (=tiedot, joita on maksimissaan vain yksi kappale kohteella) on sarakkeina. Ne osat ominaisuustiedoista, joita voi olla useampia kuin yksi kappale on jsonb-sarakkeina taulussa. Nämä näkymät auttoivat tietokannan hahmottamisessa testausjärjestelmää rakennettaessa. Kuitenkin tallennuspalvelu ja rajapinta toteutettiin ilman näkymiä suoraan tietokantataulujen avulla.
+
+### Tallennuspalvelu
+
+Tallennuspalvelu vastaanottaa yhden kokonaisen kaavan kerrallaan. Kaava lähetetään GeoJSON FeatureCollection:ina HTTP POST-sanomana tallennuspalveluun. Palvelu suorittaa kaavalle erinäisiä tarkistuksia ennen kaavan kohteiden tallentamista. Muun muassa:
+
+* Collectionissa tulee olla tasan yksi SpatialPlan
+* Collectionissa tulee olla 1..n kpl PlanRegulationObject:eja
+* Collectionissa tulee olla 1..n kpl PlanRegulation:eja
+* SpatialPlanillä tulee olla PlanId ja jos sillä on asetettu identityId, nämä eivät saa olla ristiriidassa tietokantaan aiemmin tallennetun kaavan ulkorajan kanssa
+
+Latauspalvelu luo identityId:n kakille kohteille, joilla sitä ei aiemmin ole ollut. Luotu id on uuid v4:n mukainen. Lisäksi latauspalvelu luo koko lataukselle versionId:n (perustuen tallennushetkeen) ja leimaa tämän saman versionId:n kaikkiin tallennettaviin kohteisiin. Lopuksi ennen tallentamista kaikkien kohteiden GeoJSON id:ksi asetetaan `[kohteen identityId].[kohteen versionId]` (huom. kaikilla on siis sama versionId) ja kohteiden väliset linkitykset päivitetään näiden lopullisten id:itten perusteella.
+
+### OGC API - Features -rajapintapalvelu
+
+Rajapinta toteutettiin avoimen lähdekoodin SOFP-palvelimella (sofp-core ja sofp-postgis-backend). Testauksen yhteydessä SOFP:ia laajennettiin siten, että sen PostGIS-laajennos osaa hyödyntää jsonb-sarakkeeseen tallennettuja kohteiden ominaisuustietoja.
+
+Testauksessa toteutettiin kaksi rinnakkaista rajapintaa. Toinen näistä hyödyntää tietokantatauluja ja toinen näistä lataa kohteet ja niiden tiedot näkymistä. Näkymiin pohjautuva versio rajapinnasta oli koe, joka todettiin tarpeettoman monimutkaiseksi testauksen tarpeisiin nähden eikä sitä hyödynnetty käyttöliittymässä. Tässä dokumentissa käsitellään tietokantatauluhin perustuvaa rajapintaa ellei toisin mainita.
+
+OGC API - Features -rajapinnassa tiedot julkaistaan Collectioneissa. Collectionin palauttamilla kohteilla tulee olla yhdenmukainen tietomalli. Tämän periaatteen johdosta testattu kaavatieto julkaistiin kolmessa collectionissa: SpatialPlan, PlanRegulationObject ja PlanRegulation. Näiden kolmen lisäksi koetettiin rakentaa neljäs, "FeatureCollection"-niminen, collection, josta palautuisi kokonainen kaava kaikkineen kohteineen. Jälkimmäisestä lisää kohdan "FeatureCollection-rajapinta" alla.
+
+Rajapinnasta yhden kokonaisen kaavan tietojen haku toimii kolmivaiheisesti:
+* Ensin noudetaan SpatialPlan-collectionista kaava, jonka tiedot haetaan
+* PlanRegulationObject:it haetaan SpatialPlan-kohteen linkkien avulla
+* PlanRegulation:it haetaan SpatialPlan-kohteen ja PlanRegulationObject-kohteiden linkkien avulla
+
+Testauksessa käytetyn kaltaisen rajapinnan kohdalla kokonaisen kaavan haku vaatii siis useita, jopa satoja hakuja. Hakujen tekeminen on kuitenkin helppoa, koska rajapinnan palauttamissa kohteissa on valmiit linkit rajapintaan, joiden avulla viitatut kohteet on erittäin helppo hakea.
+
+#### FeatureCollection-rajapinta
+
+Testauksessa todettiin, että olisi hyödyllistä olla rajapinta, mistä voi hakea kaavan kaikkineen kohteineen kerrallaan. Testauksessa kuitenkin huomattiin tiettyjä periaatteellisia ongelmia valitun OGC API - Features rajapintatekniikan kanssa.
+
+Ensimmäinen kokeiltu menetelmä oli luoda collection, mikä palauttaisi kaiken tyyppisiä kohteita (SpatialPlan. PlanRegulationObject ja PlanRegulation). Ajatuksena oli, että kuhunkin kohteeseen voitaisiin tallentaa kaavan id samaan kohteen ominaisuuteen, jolloin kohteiden haku toimisi OGC API - Features -rajapinnan mukaisesti. Tässä kuitenkin tuli vastaan se, että collectionin palauttamien kohteiden ominaisuustietojen rakenteen tulisi olla yhtenäinen. Teknisesti olisi mahdollista toteuttaa tällainen rajapinta, mutta periaatteen tasolla tässä on ristiriita.
+
+Toinen menetelmä oli tehdä collection, joka palauttaisi kaavan yhtenä FeatureCollection-oliona. Tässä poistuisi ensimmäisen kokeilun periaatteellinen ongelma. Ongelmaksi kuitenkin muodostuu kaavatiedon potentiaalinen monimutkaisuus ja siten sen koko (tavuissa). API Featuresissa tiedon sivuttaminen on ratkaistu kohdetasolla; suuri määrä palautettavaa tietoa jaetaan kohteiden perusteella eri sivuille. Käyttäjä voi ladata koko tulosjoukon hakemalla kunkin sivun peräkkäin. Jos kaava palautettaisiin yhtenä FeatureCollection-kohteena, ei tulosjoukkoa voi sivuttaa. Jäi myös epäselväksi se, miten standardi suhtautuu collectioniin, joka sisältää käytännössä collectioneita.
+
+On huomattavaa, että OGC API - Features -palvelun OpenAPI-kuvaus on puutteellinen kohteiden tietomallin suhteen.
+
+
+## Testauksen käyttöliittymä
+
+* Käyttöliittymä
+
+https://ym-yk-ak.spatineo-devops.com/
+
+# Testauksen tulokset
+
+
+* Muutosten leviäminen linkitysten kautta kahdensuuntaisissa yhteyksissä: https://github.com/YM-rakennettu-ymparisto/AK-YK-tietomallit/issues/57
+* Puuttuvia koodilistojen arvoja (19)
+* HTTP URI -muotoiset tunnukset vs. UUID-muotoiset tunnukset: HTTP-osoitteet aiheuttavat tarpeetonta hankaluutta rajapintapalvelujen käytössä
+* Liikenne-aihepiirin kaavamääräykset ja käyttötarkoitukset: epäselviää mikä tieto on kaavamääräyslaji ja mikä käyttötarkoituslaji
+* Kaikki huomiot kirjattu GitHubiin: https://github.com/YM-rakennettu-ymparisto/AK-YK-tietomallit/issues?q=is%3Aissue+label%3AKehityssprintti
+
+
+Tarvitaan varmasti rajapinta, josta tulee kokonainen kaava kerrallaan.
