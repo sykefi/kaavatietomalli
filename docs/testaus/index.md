@@ -13,10 +13,11 @@ Testauksessa koestettiin läpi prosessi kaavatiedon tuottamisesta, sen käsittel
 
 * Tietomallin mukaisen yleis- ja asemakaavatiedon tuottaminen
 * Kaavatiedon vastaanottoa ja tallentamista tietojärjestelmään
-* Kaavatiedon esittämistä, käsittelyä ja laskentaa sovelluksessa (mm. Tyvi-lomakkeen tietojen laskeminen)
 * Yksilöivät tunnisteet ja niihin liittyvä elinkaarikäsittely
+* Kaavatiedon julkaisemista rajapintapalvelelussa
+* Kaavatiedon hyödyntämistä sovelluksessa: paikkatiedon ja kaavatiedon esittämistä sekä tiedon laskentaa (mm. Tyvi-lomakkeen tietojen laskeminen)
 
-Testauksessa tuotettiin
+Testauksessa tuotettiin kaavatietoa, tiedonhallintajärjestelmä sen tallentamiseksi sekä rajapinnat tiedon vastaaanottoon ja jakeluun.
 
 ## Rajaukset
 
@@ -29,7 +30,7 @@ Testauksen ulkopuolelle jätettiin:
 Testaus toteutettiin 9.-25.11.2020. Testauksen suoritti Ilkka Rinne, Sanna Hautala, Mikko Solismaa ja Sampo Savolainen Spatineolta sekä Pilvi Nummi (Asiantuntijat N+1). Testauksessa tehtiin seuraavat asiat:
 
 * Olemassaolevaa kaavoitustietoa digitoitiin tietomallin mukaiseen muotoon
-* Tiedonhallintajärjestelmä
+* Tiedonhallintajärjestelmä (tietokanta, tallennuspalvelu ja rajapinnat)
 * Testauksen käyttöliittymä
 
 ## Tuotetut kaavat
@@ -60,7 +61,7 @@ Tässä vaiheessa kohteilla ei ollut vielä omia tunnisteita ja linkitys kohteid
 Testausta varten toteutettiin tiedonhallintajärjestelmä. Järjestelmä asennettiin Spatineon pilvipalveluympäristöön testausta varten. Järjestelmä koostui kolmesta pääosasta:
 
 * Tietokanta
-* Talllennuspalvelu
+* Tallennuspalvelu
 * OGC API - Features -rajapintapalvelu
 
 Tietokantana oli PostGIS. Tallennuspalvelu ja rajapintapalvelu toteutettiin NodeJS:llä.
@@ -100,22 +101,34 @@ Rajapinnasta yhden kokonaisen kaavan tietojen haku toimii kolmivaiheisesti:
 
 Testauksessa käytetyn kaltaisen rajapinnan kohdalla kokonaisen kaavan haku vaatii siis useita, jopa satoja hakuja. Hakujen tekeminen on kuitenkin helppoa, koska rajapinnan palauttamissa kohteissa on valmiit linkit rajapintaan, joiden avulla viitatut kohteet on erittäin helppo hakea.
 
-#### FeatureCollection-rajapinta
-
-Testauksessa todettiin, että olisi hyödyllistä olla rajapinta, mistä voi hakea kaavan kaikkineen kohteineen kerrallaan. Testauksessa kuitenkin huomattiin tiettyjä periaatteellisia ongelmia valitun OGC API - Features rajapintatekniikan kanssa.
-
-Ensimmäinen kokeiltu menetelmä oli luoda collection, mikä palauttaisi kaiken tyyppisiä kohteita (SpatialPlan. PlanRegulationObject ja PlanRegulation). Ajatuksena oli, että kuhunkin kohteeseen voitaisiin tallentaa kaavan id samaan kohteen ominaisuuteen, jolloin kohteiden haku toimisi OGC API - Features -rajapinnan mukaisesti. Tässä kuitenkin tuli vastaan se, että collectionin palauttamien kohteiden ominaisuustietojen rakenteen tulisi olla yhtenäinen. Teknisesti olisi mahdollista toteuttaa tällainen rajapinta, mutta periaatteen tasolla tässä on ristiriita.
-
-Toinen menetelmä oli tehdä collection, joka palauttaisi kaavan yhtenä FeatureCollection-oliona. Tässä poistuisi ensimmäisen kokeilun periaatteellinen ongelma. Ongelmaksi kuitenkin muodostuu kaavatiedon potentiaalinen monimutkaisuus ja siten sen koko (tavuissa). API Featuresissa tiedon sivuttaminen on ratkaistu kohdetasolla; suuri määrä palautettavaa tietoa jaetaan kohteiden perusteella eri sivuille. Käyttäjä voi ladata koko tulosjoukon hakemalla kunkin sivun peräkkäin. Jos kaava palautettaisiin yhtenä FeatureCollection-kohteena, ei tulosjoukkoa voi sivuttaa. Jäi myös epäselväksi se, miten standardi suhtautuu collectioniin, joka sisältää käytännössä collectioneita.
+Rajapinta löytyy osoitteesta: https://ym-yk-ak.spatineo-devops.com/api
 
 On huomattavaa, että OGC API - Features -palvelun OpenAPI-kuvaus on puutteellinen kohteiden tietomallin suhteen.
 
 
+#### Kokeellinen FeatureCollection-rajapinta
+
+Testauksen aikana todettiin, että olisi hyödyllistä olla rajapinta, mistä voi hakea kaavan kaikkineen kohteineen kerrallaan. Testauksessa kuitenkin huomattiin tiettyjä periaatteellisia ongelmia valitun OGC API - Features rajapintatekniikan kanssa.
+
+Ensimmäinen kokeiltu menetelmä oli luoda collection, mikä palauttaisi kaiken tyyppisiä kohteita (SpatialPlan. PlanRegulationObject ja PlanRegulation). Ajatuksena oli, että collectionista voisi hakea kaikki yhden kaavan kohteet OGC API - Features -rajapinnan mukaisesti rajaamalla haku kaavan tunnisteen mukaan. OGC API - Features palvelun collectionin palauttamien kohteiden ominaisuustietojen rakenteen tulisi kuitenkin olla yhtenäinen. Teknisesti olisi mahdollista toteuttaa tällainen rajapinta, mutta periaatteen tasolla tässä on ristiriita.
+
+Toinen menetelmä oli tehdä collection, joka palauttaisi kaavan yhtenä FeatureCollection-oliona. Tässä poistuisi ensimmäisen kokeilun periaatteellinen ongelma. Ongelmaksi kuitenkin muodostuu kaavatiedon potentiaalinen monimutkaisuus ja etenkin sen koko. API Featuresissa tiedon sivuttaminen on ratkaistu kohdetasolla; suuri määrä palautettavaa tietoa jaetaan kohteiden perusteella eri sivuille. Käyttäjä voi ladata koko tulosjoukon hakemalla kunkin sivun peräkkäin. Jos kaava palautettaisiin yhtenä FeatureCollection-kohteena, ei tulosjoukkoa voi sivuttaa. Jäi myös epäselväksi se, miten standardi suhtautuu collectioniin, joka sisältää käytännössä collectioneita.
+
+Kompromissi OGC API - Featuresin peraatteen ja helpon kokonaisen kaavatideon noutamisen välillä olisi noutaa kaavan SpatialPlan ja sen jälkeen tämän objektin id:n perusteella kaikki siihen liittyvät PlanRegulationObject ja PlanRegulation:it omista collectioneistaan. Tällaista hakua ei kuitenkaan toteutettu testaukseen, vaan valittiin hakemaan kohteen yksittäin niihin viittaavien kohteiden linkkien perusteella.
+
+
 ## Testauksen käyttöliittymä
 
-* Käyttöliittymä
+Kaavatiedon esittämiseksi rakennettiin selainsovellus. Sovellus rakennettiin Reactilla ja OpenLayersillä ja taustakarttana on OpenStreetMap. Sovellus on tarkoitettu tietokoneen näytöllä käytettäväksi, mutta toimii välttävästi myös mobiiliselaimella.
 
-https://ym-yk-ak.spatineo-devops.com/
+Sovellus löytyy osoitteesta: https://ym-yk-ak.spatineo-devops.com/
+
+Sovelluksessa käyttäjä valitsee ensin yhden viidestä saatavilla olevasta kaavasta. Kaavan valinnan jälkeen käyttäjän tulee valita kaavan versio. Kun tämä on valittu, lataa sovellus kaavan tiedot rajapintapalvelusta ja esittää kaavan kartalla. On tärkeä huomata, että testauksessa keskityttiin koneluettavan kaavan tuottamiseen ja hyödyntämiseen, mutta ei visualisointiin.
+
+Sovelluksessa voi filtteröidä kaavakohteita näihin kohdistuvien kaavamääräyslajien avulla. Näin kartalla visualisoidaan ainoastaan kaavan ulkoraja ja ne kaavakohteet, joihin kohdistuu kyseisen määräyslajin määräyksiä. Tällä voidaa visualisoida helposti kaavaa eri määräyslajin näkökulmasta.
+
+Kaavakohteiden ja niiden määräykset saa näkyviin listaan klikkaamalla kartalta. Listalla näkyy kaikki ne kohteet, jotka ovat klikatun pisteen kohdalla. Kunkin kohteen ja määräyksen kohdalla on myös linkki, josta voi avata yksittäisen kaavakohteen tai määräyksen kohteen OGC API - Features rajapinnasta. Kaavan ulkorajan ja sen määräyksen saa näkyviin listalle klikkaamalla kartan päällä olevaa nappia.
+
 
 # Testauksen tulokset
 
