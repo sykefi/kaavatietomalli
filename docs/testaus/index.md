@@ -7,11 +7,11 @@ status: "Keskeneräinen"
 ---
 # Kaavatietomallin testaus
 
-Testauksessa koestettiin läpi prosessi kaavatiedon tuottamisesta, sen käsittelemisestä tiedonhallintajärjestelmässä sekä kaavatiedon esittäminen ja hyödyntäminnen loppukäyttäjän sovelluksessa. Tavoitteena oli tämän prosessin aikana tunnistaa tietomallin vahvuudet ja heikkoudet käytännön toteutuksissa. Työssä tunnistettiin useita heikkouksia, joista kuitenkin suurin osa pystyttiin korjaamaan työn aikana tai kehittämään menetelmät, miten tietomallia voidaan jatkokehittää parempaan suuntaan.
+Testauksessa koestettiin läpi prosessi kaavatiedon tuottamisesta, sen käsittelemisestä tiedonhallintajärjestelmässä sekä kaavatiedon esittäminen ja hyödyntäminnen loppukäyttäjän sovelluksessa. Tavoitteena oli tämän prosessin aikana tunnistaa tietomallin vahvuudet ja heikkoudet käytännön toteutuksissa. Työssä tunnistettiin parannuskohtia, joista suurin osa pystyttiin korjaamaan työn aikana tai kehittämään menetelmät, miten tietomallia voidaan jatkokehittää parempaan suuntaan.
 
 ## Mitä testattiin
 
-* Tietomallin mukaisen yleis- ja asemakaavatiedon tuottaminen
+* Tietomallin mukaisen yleis- ja asemakaavatiedon tuottaminen: kaavan ulkoraja, kaavakohteet ja kaavamääräykset
 * Kaavatiedon vastaanottoa ja tallentamista tietojärjestelmään
 * Yksilöivät tunnisteet ja niihin liittyvä elinkaarikäsittely
 * Kaavatiedon julkaisemista rajapintapalvelelussa
@@ -22,8 +22,10 @@ Testauksessa tuotettiin kaavatietoa, tiedonhallintajärjestelmä sen tallentamis
 ## Rajaukset
 
 Testauksen ulkopuolelle jätettiin:
+* Kaikkia tietomallin luokkia ei testattu (kts. ylle testatut luokat)
 * Kaavan visualisointi
 * Ajantasakaavan muodostaminen
+
 
 # Testauksen toteutustapa ja -aika
 
@@ -56,6 +58,8 @@ Lopputuloksena jokaisesta kaavasta ja kaavan versiosta tuotettiin oma hakemisto.
 
 Tässä vaiheessa kohteilla ei ollut vielä omia tunnisteita ja linkitys kohteiden välillä perustui siihen miten geometriaan (ulkoraja tai kaavakohde) liittyvät määräykset olivat samassa tiedostossa keskenään. Lopullisen tallennuspalveluun lähetettävä tietomallin mukainen FeatureCollection-tiedosto tuotettiin python-skripti, joka loi kaikille kohteille localId:n ja tuotti linkitykset kohteiden välille. Lopputuloksena siis yksi GeoJSON-tiedosto kokonaiselle kaavalle.
 
+TODO: linkkejä muodostettuihin tiedostoihin? todellisiin viimeisten muutosten mukaisiin
+
 ## Testaukseen tuotettu tietonhallintajärjestelmä
 
 Testausta varten toteutettiin tiedonhallintajärjestelmä. Järjestelmä asennettiin Spatineon pilvipalveluympäristöön testausta varten. Järjestelmä koostui kolmesta pääosasta:
@@ -71,7 +75,7 @@ Tietokantana oli PostGIS. Tallennuspalvelu ja rajapintapalvelu toteutettiin Node
 
 Tietokantana käytettiin Postgresql-tietokantaa PostGIS-laajennoksella. Tietojen tallennusta varten tehtiin kolme tietokantataulua: kaavan ulkorajat, kaavakohteet ja kaavamääräykset. Kaikissa kolmessa taulussa oli samat sarakkeet: id (pääavain), created_time (tallennusaika), geom (geometriatieto) ja properties. Properties-sarake sisälsi kohteen kaikki ominaisuustiedot rakenteellisessa muodossa (jsonb-sarake).
 
-Tietokantaan tallennetuissa kohteissa linkitykset kohteiden välillä sisältävät ainoastaan `linkedFeatureId`:n. Lopulliset selaimessa käytettävät linkit luodaan vasta rajapinnan palauttamissa kohteissa.
+Tietokantaan tallennetuissa kohteissa linkitykset kohteiden välillä sisältävät ainoastaan viittauksen kohteen id:hen (`linkedFeatureId`). Lopulliset selaimessa käytettävät linkit luodaan vasta rajapinnan palauttamissa kohteissa.
 
 Tietokantataulujen lisäksi testattiin luoda kustakin tietokantataulusta näkymä, jossa rakenteellisen tiedon yksittäiset kentät (=tiedot, joita on maksimissaan vain yksi kappale kohteella) on sarakkeina. Ne osat ominaisuustiedoista, joita voi olla useampia kuin yksi kappale on jsonb-sarakkeina taulussa. Nämä näkymät auttoivat tietokannan hahmottamisessa testausjärjestelmää rakennettaessa. Kuitenkin tallennuspalvelu ja rajapinta toteutettiin ilman näkymiä suoraan tietokantataulujen avulla.
 
@@ -112,7 +116,7 @@ Testauksen aikana todettiin, että olisi hyödyllistä olla rajapinta, mistä vo
 
 Ensimmäinen kokeiltu menetelmä oli luoda collection, mikä palauttaisi kaiken tyyppisiä kohteita (SpatialPlan. PlanRegulationObject ja PlanRegulation). Ajatuksena oli, että collectionista voisi hakea kaikki yhden kaavan kohteet OGC API - Features -rajapinnan mukaisesti rajaamalla haku kaavan tunnisteen mukaan. OGC API - Features palvelun collectionin palauttamien kohteiden ominaisuustietojen rakenteen tulisi kuitenkin olla yhtenäinen. Teknisesti olisi mahdollista toteuttaa tällainen rajapinta, mutta periaatteen tasolla tässä on ristiriita.
 
-Toinen menetelmä oli tehdä collection, joka palauttaisi kaavan yhtenä FeatureCollection-oliona. Tässä poistuisi ensimmäisen kokeilun periaatteellinen ongelma. Ongelmaksi kuitenkin muodostuu kaavatiedon potentiaalinen monimutkaisuus ja etenkin sen koko. API Featuresissa tiedon sivuttaminen on ratkaistu kohdetasolla; suuri määrä palautettavaa tietoa jaetaan kohteiden perusteella eri sivuille. Käyttäjä voi ladata koko tulosjoukon hakemalla kunkin sivun peräkkäin. Jos kaava palautettaisiin yhtenä FeatureCollection-kohteena, ei tulosjoukkoa voi sivuttaa. Jäi myös epäselväksi se, miten standardi suhtautuu collectioniin, joka sisältää käytännössä collectioneita.
+Toinen menetelmä oli tehdä collection, joka palauttaisi kaavan yhtenä FeatureCollection-oliona. Tässä poistuisi ensimmäisen kokeilun periaatteellinen ongelma. Ongelmaksi kuitenkin muodostuu kaavatiedon potentiaalinen monimutkaisuus ja etenkin sen koko. API Featuresissa tiedon sivuttaminen on ratkaistu kohdetasolla; suuri määrä palautettavaa tietoa jaetaan kohteiden perusteella eri sivuille. Käyttäjä voi ladata koko tulosjoukon hakemalla kunkin sivun peräkkäin. Jos kaava palautettaisiin yhtenä FeatureCollection-kohteena, ei tulosjoukkoa voi sivuttaa. Lisäksi GeoJSON standardin mukaan FeatureCollectionin memberinä ei saa olla FeatureCollectioneitä, joten tällä tavalla toteutettuna rajapinta ei palauttaisi validia GeoJSON:ia.
 
 Kompromissi OGC API - Featuresin peraatteen ja helpon kokonaisen kaavatideon noutamisen välillä olisi noutaa kaavan SpatialPlan ja sen jälkeen tämän objektin id:n perusteella kaikki siihen liittyvät PlanRegulationObject ja PlanRegulation:it omista collectioneistaan. Tällaista hakua ei kuitenkaan toteutettu testaukseen, vaan valittiin hakemaan kohteen yksittäin niihin viittaavien kohteiden linkkien perusteella.
 
@@ -132,12 +136,33 @@ Kaavakohteiden ja niiden määräykset saa näkyviin listaan klikkaamalla kartal
 
 # Testauksen tulokset
 
+Testauksen aikana havaitut haasteet ja puutteet tietomallissa dokumentoitiin [githubiin](https://github.com/YM-rakennettu-ymparisto/AK-YK-tietomallit/issues?q=is%3Aissue+label%3AKehityssprintti). Tässä raportissa on nostettu esiin havainnoista muutama keskeinen:
 
-* Muutosten leviäminen linkitysten kautta kahdensuuntaisissa yhteyksissä: https://github.com/YM-rakennettu-ymparisto/AK-YK-tietomallit/issues/57
-* Puuttuvia koodilistojen arvoja (19)
-* HTTP URI -muotoiset tunnukset vs. UUID-muotoiset tunnukset: HTTP-osoitteet aiheuttavat tarpeetonta hankaluutta rajapintapalvelujen käytössä
-* Liikenne-aihepiirin kaavamääräykset ja käyttötarkoitukset: epäselviää mikä tieto on kaavamääräyslaji ja mikä käyttötarkoituslaji
-* Kaikki huomiot kirjattu GitHubiin: https://github.com/YM-rakennettu-ymparisto/AK-YK-tietomallit/issues?q=is%3Aissue+label%3AKehityssprintti
+## Linkkaukset kohteista toiseen
+
+Testauksen aikana keskusteltiin linkityksestä oliosta toiseen. Tunnistettiin, että kaksisuuntaisella linkityksellä muutos mihin tahansa olioon (ulkoraja, kaavakohde, määräys) johtaa kaikkien kaavaan liitettyjen olioiden versiointiin. 
+
+[Github issue](https://github.com/YM-rakennettu-ymparisto/AK-YK-tietomallit/issues/57)
+[Analyysi elinkaarisäännöissä](https://ym-rakennettu-ymparisto.github.io/AK-YK-tietomallit/1.0/looginenmalli/elinkaarisaannot.html#muutosten-levi%C3%A4minen-viittausten-kautta)
+
+## Puuttuvia koodilistojen arvoja
+
+Testauksen aikana tunnistettiin 19 puuttunutt koodilistan arvoa. Havaitut puutteet korjattiin testauksen aikana ja sen jälkeen.
+
+## Tunnusten muoto - URI vs UUID
+
+Rajapintapalvelun kohdalla HTTP-muotoiset osoitteet aiheuttavat tarpeetonta hankaluutta käytössä. Tämä käytännössä siksi, että tällaiset tunnukset sisältävät merkkejä (mm. `:`, `/`, `?`, `&` ja `=`), joilla on  erityismerkitys HTTP-osoitteissa. Jos ja kun osoitteella linkataan tunnuksen avulla tiettyyn tunnukseen, tulee osoitteesta tarpeettoman vaikea ja hankala lukea. Tästä lisää [elinkaarisäännöissä](https://ym-rakennettu-ymparisto.github.io/AK-YK-tietomallit/1.0/looginenmalli/elinkaarisaannot.html).
+
+## Liikenne-aihepiirin käyttötarkoitukset
+
+Testauksessa kävi ilmi, että liikenne-aihepiirin kaavamääräyksien ja käyttötarkoitusten kohdalla on epäselviää, mikä tieto on kaavamääräyslaji ja mikä käyttötarkoituslaji [65](https://github.com/YM-rakennettu-ymparisto/AK-YK-tietomallit/issues/65).
+
+# Yhteenveto
+
+Tietomalli toimi hyvin testauksessa. Digitointi oli helppoa suhteuttaen siihen, että käytössä ei ollut tietomallin mukaisen tiedon tuottamiseen tarkoitettua erityistyökalua. Malli on yleinen ja siten hyvin joustava ja siten kykenee muotoutumaan niin käytäntöjen kuin ympäröivän lainsäädännön ja toimintatapojen kehittyessä. Kuitenkin yleisyyden takia on tärkeää huolehtia tiedon eheystarkistuksista, jotta tiedon laadusta voidaan huolehtia. Eheystarkistus- ja validointipalvelun olisi hyvä toimia lähes reaaliaikaisesti eikä ainoastaan tallennusvaiheessa tai erillisenä validointitoimenpiteenä.
+
+Tietomallipohjaisen kaavoituksen hyötyjä tuli todistettua testauksessa Tyvi-lomakkeen tietojan laskemisessa. Käyttöliittymäsovellukseen toteutettiin nykymallin kaltainen lomake ja siihen tietojen laskeminen noin kahdessa tunnissa.
+
+Kaavoituksen käytännöt, koodistot ja säännöstöt tulevat elämään RYTJ:n elinkaaren aikana. Näin ollen järjestelmässä on varauduttava tähän, jotta tieto voidaan muuntaa yhteismitalliseen muotoon mm. laskentaa ja ristiintarkistuksia varten. Ajan kuluessa ja historian säännöstökerrostumien kasautuessa tästä tulee elinehto järjestelmän kehittämisen ja ylläpidettävyyden takaamiseksi.
 
 
-Tarvitaan varmasti rajapinta, josta tulee kokonainen kaava kerrallaan.
