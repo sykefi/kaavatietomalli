@@ -2,7 +2,8 @@
 layout: "default"
 title: "Kaavatietomalli - PostgreSQL-tietokanta"
 description: ""
-page: "kaava-postgre"
+id: "kaava-postgre"
+model: "kaavatiedot"
 modelversion: "1.1-dev"
 status: "Ehdotus"
 ---

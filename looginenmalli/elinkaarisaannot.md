@@ -1,9 +1,9 @@
 ---
 layout: "default"
-title: "Kaavatietomalli - looginen tietomalli - elinkaarisäännöt"
 description: ""
-page: "elinkaarisaannot"
-modelversion: "1.1-dev"
+id: "elinkaarisaannot"
+model: "kaavatiedot"
+modelversion: "v1.1-dev"
 status: "Ehdotus"
 ---
 # Elinkaarisäännöt

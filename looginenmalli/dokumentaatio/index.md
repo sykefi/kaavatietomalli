@@ -1,9 +1,9 @@
 ---
 layout: "default"
-title: "Kaavatietomalli - looginen tietomalli - dokumentaatio"
 description: ""
-page: "dokumentaatio"
-modelversion: "1.1-dev"
+id: "dokumentaatio"
+modelversion: "v1.1-dev"
+model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # Loogisen tason kaavatietomalli

@@ -2,7 +2,8 @@
 layout: "default"
 title: "Kaavatietomalli - soveltamisprofiili - yleiskaava"
 description: ""
-page: "profiili-yk"
+id: "profiili-yk"
+model: "kaavatiedot"
 modelversion: "1.1-dev"
 status: "Ehdotus"
 ---

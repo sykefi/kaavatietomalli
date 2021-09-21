@@ -1,9 +1,9 @@
 ---
 layout: "default"
-title: "Kaavatietomalli - looginen tietomalli - Inspire"
 description: ""
-page: "inspire"
-modelversion: "1.1-dev"
+id: "inspire"
+model: "kaavatiedot"
+modelversion: "v1.1-dev"
 status: "Keskeneräinen"
 ---
 # Inspire-yhteensopivuus

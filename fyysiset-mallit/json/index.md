@@ -2,7 +2,8 @@
 layout: "default"
 title: "Kaavatietomalli - Kaava-JSON"
 description: ""
-page: "kaava-json"
+id: "kaava-json"
+model: "kaavatiedot"
 modelversion: "1.1-dev"
 status: "Ehdotus"
 ---

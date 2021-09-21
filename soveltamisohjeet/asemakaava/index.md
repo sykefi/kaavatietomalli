@@ -2,7 +2,8 @@
 layout: "default"
 title: "Kaavatietomalli - soveltamisprofiili - asemakaava"
 description: ""
-page: "profiili-ak"
+id: "profiili-ak"
+model: "kaavatiedot"
 modelversion: "1.1-dev"
 status: "Ehdotus"
 ---

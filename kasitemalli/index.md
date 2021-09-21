@@ -1,9 +1,9 @@
 ---
 layout: "default"
-title: "Kaavatietomalli - käsitemalli ja määritelmät"
 description: ""
-page: "kasitemalli"
-modelversion: "1.1-dev"
+id: "kasitemalli"
+model: "kaavatiedot"
+modelversion: "v1.0"
 status: "Ehdotus"
 ---
 # Käsitteet ja määritelmät

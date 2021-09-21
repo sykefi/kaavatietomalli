@@ -1,8 +1,8 @@
 ---
 layout: "default"
-title: "Kaavatietomalli - looginen tietomalli - laatusäännöt"
 description: ""
-page: "laatusaannot"
+id: "laatusaannot"
+model: "kaavatiedot"
 modelversion: "1.1-dev"
 status: "Ehdotus"
 ---

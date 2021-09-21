@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("0.1.1:1", "", "Kultturihistoriallinen merkittävyys", "EARoot/EA1/EA1/EA8.html", "177.png", "38721", "0", "", "Object diagram0","{8DE56C3C-4D96-4e74-A3D7-8D33FE51F569}");
+tocTab[tocTab.length] = new Array("0.1.1:2", "", "ak1: Kaava", "EARoot/EA1/EA1/EA12.html", "25.png", "E79828", "0", "", "Object0","{85001F5C-57F1-4e47-8A8E-5524E1FC003F}");
+tocTab[tocTab.length] = new Array("0.1.1:3", "", "ka1: Koodiarvo", "EARoot/EA1/EA1/EA13.html", "25.png", "E79742", "0", "", "Object0","{6812A258-D3EB-4f3e-BED5-52464FF92F22}");
+tocTab[tocTab.length] = new Array("0.1.1:4", "", "kk1: Kaavakohde", "EARoot/EA1/EA1/EA14.html", "25.png", "E79739", "0", "", "Object0","{434C0271-CD8E-46f9-9DD5-9032A0BCA946}");
+tocTab[tocTab.length] = new Array("0.1.1:5", "", "km1: Kaavamaarays", "EARoot/EA1/EA1/EA15.html", "25.png", "E79740", "0", "", "Object0","{4BA966A2-EE8B-4232-BC1C-63457355B7EE}");
+tocTab[tocTab.length] = new Array("0.1.1:6", "", "lt1: Lahtotietoaineisto", "EARoot/EA1/EA1/EA16.html", "25.png", "E79771", "0", "", "Object0","{A2368652-1BEF-4c73-870F-1C18561086A8}");
+tocTab[tocTab.length] = new Array("0.1.1:7", "", "lt1: Lisatieto", "EARoot/EA1/EA1/EA17.html", "25.png", "E79741", "0", "", "Object0","{4A5C4EAB-850C-46a2-A93D-D4DBFBA7A675}");
+tocTab[tocTab.length] = new Array("0.1.1:8", "", "ta1: Tekstiarvo", "EARoot/EA1/EA1/EA18.html", "25.png", "E79745", "0", "", "Object0","{7B2DBD7A-68D9-4c39-BEB4-C103E90C1D0C}");

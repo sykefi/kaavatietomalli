@@ -2,7 +2,8 @@
 layout: "default"
 title: "Kaavatietomalli - soveltamisohjeet - yleiskaava"
 description: ""
-page: "cookbook-yk"
+id: "cookbook-yk"
+model: "kaavatiedot"
 modelversion: "1.1-dev"
 status: "Keskeneräinen"
 ---
