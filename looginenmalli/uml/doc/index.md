@@ -3,7 +3,6 @@ layout: "ea-frame"
 description: ""
 id: "uml-doc"
 model: "kaavatiedot"
-modelversion: "v1.1-dev"
 defaultDiagram: "./EARoot/EA2/EA34.html"
 ---
 # Loogisen tason kaavatietomalli - UML-luokkakaaviot

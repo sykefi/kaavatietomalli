@@ -4,7 +4,6 @@ title: "Kaavatietomalli - Kaava-JSON"
 description: ""
 id: "kaava-json"
 model: "kaavatiedot"
-modelversion: "1.1-dev"
 status: "Ehdotus"
 ---
 # Kaava-JSON

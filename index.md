@@ -4,7 +4,6 @@ title: "Kaavatietomallit"
 description: "Asema- ja yleiskaavojen kansalliset tietomallit mahdollistavat kaavatietovarantojen hyödyntämisen monipuolisesti ja tehokkaasti"
 id: "kaavatiedot"
 model: "kaavatiedot"
-modelversion: "1.1-dev"
 ---
 # Kaavatietomallit
 

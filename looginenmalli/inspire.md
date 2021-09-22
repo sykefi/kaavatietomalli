@@ -3,7 +3,6 @@ layout: "default"
 description: ""
 id: "inspire"
 model: "kaavatiedot"
-modelversion: "v1.1-dev"
 status: "Keskeneräinen"
 ---
 # Inspire-yhteensopivuus

@@ -2,9 +2,8 @@
 layout: "default"
 title: "Kaavatietomalli - soveltamisprofiili - asemakaava"
 description: ""
-id: "profiili-ak"
+id: "sp-asemakaava"
 model: "kaavatiedot"
-modelversion: "1.1-dev"
 status: "Ehdotus"
 ---
 # Kaavatietomallin soveltamisprofiili asemakaava-aineistoille

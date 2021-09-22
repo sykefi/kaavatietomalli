@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "dokumentaatio"
-modelversion: "v1.1-dev"
 model: "kaavatiedot"
 status: "Ehdotus"
 ---

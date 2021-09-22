@@ -2,9 +2,8 @@
 layout: "default"
 title: "Kaavatietomalli - soveltamisprofiili - yleiskaava"
 description: ""
-id: "profiili-yk"
+id: "sp-yleiskaava"
 model: "kaavatiedot"
-modelversion: "1.1-dev"
 status: "Ehdotus"
 ---
 # Kaavatietomallin soveltamisprofiili yleiskaava-aineistoille

@@ -3,7 +3,6 @@ layout: "default"
 description: ""
 id: "elinkaarisaannot"
 model: "kaavatiedot"
-modelversion: "v1.1-dev"
 status: "Ehdotus"
 ---
 # Elinkaarisäännöt

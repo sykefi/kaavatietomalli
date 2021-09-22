@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "uml-model"
-modelversion: "v1.1-dev"
 model: "kaavatiedot"
 ---
 # Loogisen tason UML-tietomalli
