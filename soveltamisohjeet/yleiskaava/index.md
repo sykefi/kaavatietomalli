@@ -2,7 +2,7 @@
 layout: "default"
 title: "Kaavatietomalli - soveltamisprofiili - yleiskaava"
 description: ""
-id: "sp-yleiskaava"
+id: "yleiskaava"
 model: "kaavatiedot"
 status: "Ehdotus"
 ---

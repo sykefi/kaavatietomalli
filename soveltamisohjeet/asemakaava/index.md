@@ -2,7 +2,7 @@
 layout: "default"
 title: "Kaavatietomalli - soveltamisprofiili - asemakaava"
 description: ""
-id: "sp-asemakaava"
+id: "asemakaava"
 model: "kaavatiedot"
 status: "Ehdotus"
 ---
