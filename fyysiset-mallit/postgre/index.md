@@ -3,7 +3,6 @@ layout: "default"
 title: "Kaavatietomalli - PostgreSQL-tietokanta"
 description: ""
 id: "kaava-postgre"
-model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # PostgreSQL/PostGIS -tietokanta
@@ -35,7 +34,7 @@ Pois jätettyjen luokkien mallintamisessa ei nähdä mitään erityisiä haastei
 
 Tietokannan, taulujen ja näkymien luomiseen käytetyn [luontiskriptin](https://github.com/YM-rakennettu-ymparisto/kaavatietomalli/blob/8a98b21e848c0208de9c384f49f30d3cf664ab73/testaus/postgre/init-user-db.sh) avulla voidaan alustaa PostgreSQL-tietokanta tauluineen ja näkymineen.
 
-{% include note.html content="Tietokantamallinnuksessa ei kiinnitetty erityistä huomiota rakenteiden hakutehokkuuteen ja tietojen indeksointiin, koska ensisijaisena tavoitteena oli testata loogisen tietomallin mallinnettavuutta tietokantarakenteena. Mikäli tässä kuvatun tietokantaratkaisun pohjalta luotaisiin operatiiviseen käyttöön soveltuva tietokanta, tulee sen suunnittelussa ottaa huomioon myös ratkaisun suorituskyky." %} 
+{% include common/note.html content="Tietokantamallinnuksessa ei kiinnitetty erityistä huomiota rakenteiden hakutehokkuuteen ja tietojen indeksointiin, koska ensisijaisena tavoitteena oli testata loogisen tietomallin mallinnettavuutta tietokantarakenteena. Mikäli tässä kuvatun tietokantaratkaisun pohjalta luotaisiin operatiiviseen käyttöön soveltuva tietokanta, tulee sen suunnittelussa ottaa huomioon myös ratkaisun suorituskyky." %} 
 
 ## Luokkien mallinnus relaatioina
 Kaikki neljä tietokantataulua mallinnettiin täsmälleen samalla tavalla: taulujen sarakkeiksi valittiin

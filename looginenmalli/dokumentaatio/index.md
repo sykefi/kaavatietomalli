@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "dokumentaatio"
-model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # Loogisen tason kaavatietomalli
@@ -163,7 +162,7 @@ Roolinimi        | Role name          | Kohde               | Kardinaliteetti | 
 -----------------|--------------------|---------------------|-----------------|------------------------------------
 liittyvaAsiakirja | relatedDocument      | [Asiakirja](#asiakirja) | 0..* | toinen, tähän asiaan liittyä asiakirja. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring),joka kuvaa miten asiakirja liittyy tähän asiakirjaan
 
-{% include note.html content="Asiakirja-luokka ei kuvaa dokumentin sisältöä, eikä ota kantaa tapaan, jolla sisältö noudetaan kaavatietovarastosta tai muusta dokumentinhallintajärjestelmästä. Nämä tiedot voidaan kuvata asiakirjan metatietokuvauksessa." %}
+{% include common/note.html content="Asiakirja-luokka ei kuvaa dokumentin sisältöä, eikä ota kantaa tapaan, jolla sisältö noudetaan kaavatietovarastosta tai muusta dokumentinhallintajärjestelmästä. Nämä tiedot voidaan kuvata asiakirjan metatietokuvauksessa." %}
 
 ### Lahtotietoaineisto
 Englanninkielinen nimi: **InputDataset**
@@ -181,7 +180,7 @@ aluerajaus       | boundary           | [Geometry](#geometry) | 0..*            
 lisatietolinkki  | additionalInformationLink | [URI](#uri)  | 0..1            | viittaus ulkoiseen lisätietokuvaukseen asiakirjasta
 metatietokuvaus  | metadata           | [URI](#uri)         | 0..1            | viittaus ulkoiseen metatietokuvaukseen
 
-{% include note.html content="Lahtotietoaineisto-luokka ei kuvaa aineiston sisältöä, eikä ota kantaa tapaan, jolla sisältö noudetaan kaavatietovarastosta tai muusta tietojärjestelmästä. Nämä tiedot voidaan kuvata lähtötietoaineiston metatietokuvauksessa." %}
+{% include common/note.html content="Lahtotietoaineisto-luokka ei kuvaa aineiston sisältöä, eikä ota kantaa tapaan, jolla sisältö noudetaan kaavatietovarastosta tai muusta tietojärjestelmästä. Nämä tiedot voidaan kuvata lähtötietoaineiston metatietokuvauksessa." %}
 
 
 ### AbstraktiTapahtuma
@@ -278,7 +277,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none) 
 
-{% include codelistref.html id="RY_LahtotietoaineistonLaji" name="Lähtötietoaineiston lajit (asema- ja yleiskaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_LahtotietoaineistonLaji" name="Lähtötietoaineiston lajit (asema- ja yleiskaava)" %}
 
 
 #### AsiakirjanLaji
