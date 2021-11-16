@@ -3,7 +3,6 @@ layout: "default"
 title: "Kaavatietomalli - PostgreSQL-tietokanta"
 description: ""
 id: "kaava-postgre"
-model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # PostgreSQL/PostGIS -tietokanta

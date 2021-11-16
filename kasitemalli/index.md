@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "kasitemalli"
-model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # Käsitteet ja määritelmät

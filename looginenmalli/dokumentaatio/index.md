@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "dokumentaatio"
-model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # Loogisen tason kaavatietomalli

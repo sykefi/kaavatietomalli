@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "elinkaarisaannot"
-model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # Elinkaarisäännöt

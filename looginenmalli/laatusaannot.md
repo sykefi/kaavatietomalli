@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "laatusaannot"
-model: "kaavatiedot"
 status: "Ehdotus"
 ---
 # Laatusäännöt
