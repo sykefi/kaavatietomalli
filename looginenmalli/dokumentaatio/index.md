@@ -287,7 +287,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none) 
 
-{% include codelistref.html id="RY_AsiakirjanLaji_YKAK" name="Asiakirjan laji (yleis- ja asemakaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_AsiakirjanLaji_YKAK" name="Asiakirjan laji (yleis- ja asemakaava)" %}
 
 
 #### OikeusvaikutteisuudenLaji
@@ -297,7 +297,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_OikeusvaikutteisuudenLaji" name="Oikeusvaikutteisuuden laji (maankäyttöasia)" %}
+{% include common/codelistref.html registry="rytj" id="RY_OikeusvaikutteisuudenLaji" name="Oikeusvaikutteisuuden laji (maankäyttöasia)" %}
 
 
 #### AbstraktiKasittelytapahtumanLaji
@@ -688,7 +688,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_Kaavalaji" name="Kaavalajit (maakunta-, yleis- ja asemakaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_Kaavalaji" name="Kaavalajit (maakunta-, yleis- ja asemakaava)" %}
 
 
 #### KaavanElinkaaritila
@@ -698,7 +698,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_KaavanElinkaaritila" name="Elinkaaren tila (yleis- ja asemakaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_KaavanElinkaaritila" name="Elinkaaren tila (yleis- ja asemakaava)" %}
 
 #### Sitovuuslaji
 Englanninkielinen nimi: **BindingnessKind**
@@ -707,7 +707,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_Sitovuuslaji" name="Sijainnin sitovuuden laji" %}
+{% include common/codelistref.html registry="rytj" id="RY_Sitovuuslaji" name="Sijainnin sitovuuden laji" %}
 
 #### MaanalaisuudenLaji
 Englanninkielinen nimi: **GroundRelativenessKind**
@@ -716,7 +716,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_MaanalaisuudenLaji" name="Maanalaisuuden laji" %}
+{% include common/codelistref.html registry="rytj" id="RY_MaanalaisuudenLaji" name="Maanalaisuuden laji" %}
 
 #### DigitaalinenAlkupera
 Englanninkielinen nimi: **DigitalOriginKind**
@@ -725,7 +725,7 @@ Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_DigitaalinenAlkupera" name="Kaavan digitaalinen alkuperä" %}
+{% include common/codelistref.html registry="rytj" id="RY_DigitaalinenAlkupera" name="Kaavan digitaalinen alkuperä" %}
 
 #### AbstraktiKaavakohdelaji
 Englanninkielinen nimi: **AbstractPlanObjectKind**
@@ -750,7 +750,7 @@ Erikoistaa luokkaa [AbstraktiYmparistomuutoksenLaji](#abstraktiymparistomuutokse
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_YmparistomuutoksenLaji_YK" name="Ympäristömuutoksen laji (yleiskaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_YmparistomuutoksenLaji_YK" name="Ympäristömuutoksen laji (yleiskaava)" %}
 
 #### AbstraktiKaavoitusteema
 Englanninkielinen nimi: **AbstractSpatialPlanTheme**
@@ -767,7 +767,7 @@ Erikoistaa luokkaa [AbstraktiKaavoitusteema](#abstraktikaavoitusteema), stereoty
 
 Laajennettavuus: [Laajennettavissa kaikilla tasoilla](http://inspire.ec.europa.eu/registry/extensibility/open)
 
-{% include codelistref.html id="RY_Kaavoitusteema_AK" name="Kaavoitusteema (asemakaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_Kaavoitusteema_AK" name="Kaavoitusteema (asemakaava)" %}
 
 #### KaavoitusteemaYleiskaava
 Englanninkielinen nimi: **MasterPlanTheme**
@@ -776,7 +776,7 @@ Erikoistaa luokkaa [AbstraktiKaavoitusteema](#abstraktikaavoitusteema), stereoty
 
 Laajennettavuus: [Laajennettavissa kaikilla tasoilla](http://inspire.ec.europa.eu/registry/extensibility/open)
 
-{% include codelistref.html id="RY_Kaavoitusteema_YK" name="Kaavoitusteema (yleiskaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_Kaavoitusteema_YK" name="Kaavoitusteema (yleiskaava)" %}
 
 #### AbstraktiKaavamaarayslaji
 Englanninkielinen nimi: **AbstractPlanRegulationKind**
@@ -792,7 +792,7 @@ Erikoistaa luokkaa [AbstraktiKaavamaarayslaji](#abstraktikaavamaarayslaji), ster
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_KaavamaaraysLaji_AK" name="Kaavamääräyslaji (asemakaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_KaavamaaraysLaji_AK" name="Kaavamääräyslaji (asemakaava)" %}
 
 #### KaavamaarayslajiYleiskaava
 Englanninkielinen nimi: **MasterPlanRegulationKind**
@@ -801,7 +801,7 @@ Erikoistaa luokkaa [AbstraktiKaavamaarayslaji](#abstraktikaavamaarayslaji), ster
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_KaavamaaraysLaji_YK" name="Kaavamääräyslaji (yleiskaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_KaavamaaraysLaji_YK" name="Kaavamääräyslaji (yleiskaava)" %}
 
 
 #### AbstraktiLisatiedonLaji
@@ -818,7 +818,7 @@ Erikoistaa luokkaa [AbstraktiLisatiedonLaji](#abstraktilisatiedonlaji), stereoty
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_LisatiedonLaji_AK" name="Kaavamääräyksen lisätiedon laji (asemakaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_LisatiedonLaji_AK" name="Kaavamääräyksen lisätiedon laji (asemakaava)" %}
 
 #### LisatiedonLajiYleiskaava
 Englanninkielinen nimi: **MasterPlanAdditionInformationKind**
@@ -827,7 +827,7 @@ Erikoistaa luokkaa [AbstraktiLisatiedonLaji](#abstraktilisatiedonlaji), stereoty
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_LisatiedonLaji_YK" name="Kaavamääräyksen lisätiedon laji (yleiskaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_LisatiedonLaji_YK" name="Kaavamääräyksen lisätiedon laji (yleiskaava)" %}
 
 #### KaavanKasittelytapahtumanLaji
 Englanninkielinen nimi: **SpatialPlanHandlingEventKind**
@@ -836,7 +836,7 @@ Erikoistaa luokkaa [AbstraktiKasittelytapahtumanLaji](#abstraktikasittelytapahtu
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_KaavanKasittelytapahtumanLaji" name="Käsittelytapahtuman laji (asema- ja yleiskaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_KaavanKasittelytapahtumanLaji" name="Käsittelytapahtuman laji (asema- ja yleiskaava)" %}
 
 #### KaavanVuorovaikutustapahtumanlaji
 Englanninkielinen nimi: **SpatialPlanInteractionEventKind**
@@ -845,7 +845,7 @@ Erikoistaa luokkaa [AbstraktiVuorovaikutustapahtumanLaji](#abstraktivuorovaikutu
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-{% include codelistref.html id="RY_KaavanVuorovaikutustapahtumanLaji" name="Vuorovaikutustapahtuman laji (asema- ja yleiskaava)" %}
+{% include common/codelistref.html registry="rytj" id="RY_KaavanVuorovaikutustapahtumanLaji" name="Vuorovaikutustapahtuman laji (asema- ja yleiskaava)" %}
 
 [ISO-8601-1]: https://www.iso.org/standard/70907.html "ISO 8601-1:2019 Date and time — Representations for information interchange — Part 1: Basic rules"
 [ISO-639-2]: https://www.iso.org/standard/4767.html "ISO 639-2:1998 Codes for the representation of names of languages — Part 2: Alpha-3 code"
