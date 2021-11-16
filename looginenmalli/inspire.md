@@ -350,7 +350,7 @@ Kaavamääräyslaji (asemakaava)                                                
 [Ympäristöhäiriötä aiheuttava teollisuustoiminta](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010607) | | |
 [Muu työpaikka tai tuotantoalue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010608) | | |
 
-{% include bug.html content="Koodistossa 'Muu työpaikka tai tuontantoalue', tulisi olla 'Muu työpaikka tai tuotantoalue'" %}
+{% include common/bug.html content="Koodistossa 'Muu työpaikka tai tuontantoalue', tulisi olla 'Muu työpaikka tai tuotantoalue'" %}
 
 #### Virkistys
 
