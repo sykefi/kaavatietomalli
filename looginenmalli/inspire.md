@@ -190,11 +190,11 @@ Syötteeksi valitaan kaikki kaavan Asiakirja-instanssit, joihin viitataan jollai
 
 Riippuen Kaavamaarays-luokan instanssin ```arvo```-attribuuttien luokista tuotetaan yksi tai useampi [DimensioningIndicationRealValue](#dimensioningindicationrealvalue)-, [DimensioningIndicationMeasureValue](#dimensioningindicationmeasurevalue)- tai [DimensioningIndicationCharacterValue](#dimensioningindicationcharactervalue)-luokan instanssi.
 
-{% include note.html content="PLU-mallin DimensioningIndicationValue -luokan käyttäminen kaikkien kaavamääräysten arvojen koodaamiseen laventaa todennäköisesti ko. luokan alkuperäistä käyttöä jonkin verran, sillä nimensä perusteella sitä voisi kuvitella tarkoitettavan käyttää vain 'mitoitustiedon' ilmaisemiseen. Toisaalta [Data Specification on Land Use – Technical Guidelines, v. 3.0](https://inspire.ec.europa.eu/id/document/tg/lu) kuvaa DimensioningIndicationValue:n käytön vain hyvin ylimalkaisesti." %}
+{% include common/note.html content="PLU-mallin DimensioningIndicationValue -luokan käyttäminen kaikkien kaavamääräysten arvojen koodaamiseen laventaa todennäköisesti ko. luokan alkuperäistä käyttöä jonkin verran, sillä nimensä perusteella sitä voisi kuvitella tarkoitettavan käyttää vain 'mitoitustiedon' ilmaisemiseen. Toisaalta [Data Specification on Land Use – Technical Guidelines, v. 3.0](https://inspire.ec.europa.eu/id/document/tg/lu) kuvaa DimensioningIndicationValue:n käytön vain hyvin ylimalkaisesti." %}
 
-{% include note.html content="Kaavamääräysten arvot, jotka ovat tyyppiä [GeometriaArvo](dokumentaatio/#geometriaarvo), ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty." %}
+{% include common/note.html content="Kaavamääräysten arvot, jotka ovat tyyppiä [GeometriaArvo](dokumentaatio/#geometriaarvo), ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty." %}
 
-{% include note.html content="Kaavamääräysten lisätietoja ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty. " %}
+{% include common/note.html content="Kaavamääräysten lisätietoja ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty. " %}
 
 ### DimensioningIndicationRealValue
 
