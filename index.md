@@ -25,4 +25,4 @@ Kaavatietomallia on kehitetty seuraavissa ympäristöministeriön vetämissä ha
 * Tulevaisuuden määnkäyttöpäätökset-hanke (2019)
 * Asema- ja yleiskaavan tietomallit -projekti (syksy 2020)
 
-{% include note.html content="Kaavatietomallit-sivustosto on luotu alunperin [Asema- ja yleiskaavan tietomallit -projektin](../../projektit/ak-yk-tietomallit/) loppuraporttina syksyllä 2020" %}
+{% include common/note.html content="Kaavatietomallit-sivustosto on luotu alunperin [Asema- ja yleiskaavan tietomallit -projektin](../../projektit/ak-yk-tietomallit/) loppuraporttina syksyllä 2020" %}
