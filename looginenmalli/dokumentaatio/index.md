@@ -323,7 +323,7 @@ Vuorovaikutustapahtumien lajit kuvataan MKP-ydin -paketissa abstraktina koodisto
 ### Kaava
 Englanninkielinen nimi: **SpatialPlan**
 
-Kuvaa käsitteen [Kaava](../../kasitemalli/#kaava), erikoistaa luokkaa [AbstraktiMaankayttoasia](#abstraktimaankaytoasia), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaava](../../kasitemalli/#kaava), erikoistaa luokkaa [AbstraktiMaankayttoasia](#abstraktimaankayttoasia), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
