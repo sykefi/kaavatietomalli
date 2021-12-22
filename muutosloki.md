@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "muutosloki"
-model: "kaavatiedot"
 ---
 # Muutosloki
 

@@ -2,7 +2,6 @@
 layout: "default"
 description: ""
 id: "inspire"
-model: "kaavatiedot"
 status: "Keskeneräinen"
 ---
 # Inspire-yhteensopivuus
@@ -191,11 +190,11 @@ Syötteeksi valitaan kaikki kaavan Asiakirja-instanssit, joihin viitataan jollai
 
 Riippuen Kaavamaarays-luokan instanssin ```arvo```-attribuuttien luokista tuotetaan yksi tai useampi [DimensioningIndicationRealValue](#dimensioningindicationrealvalue)-, [DimensioningIndicationMeasureValue](#dimensioningindicationmeasurevalue)- tai [DimensioningIndicationCharacterValue](#dimensioningindicationcharactervalue)-luokan instanssi.
 
-{% include note.html content="PLU-mallin DimensioningIndicationValue -luokan käyttäminen kaikkien kaavamääräysten arvojen koodaamiseen laventaa todennäköisesti ko. luokan alkuperäistä käyttöä jonkin verran, sillä nimensä perusteella sitä voisi kuvitella tarkoitettavan käyttää vain 'mitoitustiedon' ilmaisemiseen. Toisaalta [Data Specification on Land Use – Technical Guidelines, v. 3.0](https://inspire.ec.europa.eu/id/document/tg/lu) kuvaa DimensioningIndicationValue:n käytön vain hyvin ylimalkaisesti." %}
+{% include common/note.html content="PLU-mallin DimensioningIndicationValue -luokan käyttäminen kaikkien kaavamääräysten arvojen koodaamiseen laventaa todennäköisesti ko. luokan alkuperäistä käyttöä jonkin verran, sillä nimensä perusteella sitä voisi kuvitella tarkoitettavan käyttää vain 'mitoitustiedon' ilmaisemiseen. Toisaalta [Data Specification on Land Use – Technical Guidelines, v. 3.0](https://inspire.ec.europa.eu/id/document/tg/lu) kuvaa DimensioningIndicationValue:n käytön vain hyvin ylimalkaisesti." %}
 
-{% include note.html content="Kaavamääräysten arvot, jotka ovat tyyppiä [GeometriaArvo](dokumentaatio/#geometriaarvo), ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty." %}
+{% include common/note.html content="Kaavamääräysten arvot, jotka ovat tyyppiä [GeometriaArvo](dokumentaatio/#geometriaarvo), ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty." %}
 
-{% include note.html content="Kaavamääräysten lisätietoja ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty. " %}
+{% include common/note.html content="Kaavamääräysten lisätietoja ei muunneta Inspire-muotoon, koska käyttökelpoista kohdetyyppiä ei ole PLU-skeemassa määritelty. " %}
 
 ### DimensioningIndicationRealValue
 
@@ -292,7 +291,7 @@ Kaavamääräyslaji (asemakaava)                                                
 [Keskustatoimintojen alakeskus](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010202) | | |
 [Muut keskustatoiminnot](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010203)        | | |
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Keskustatoiminnot' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille keskustatoiminnoille, niin tulisiko koodi '010201 Keskustatoimintojen' alue olla 'Keskustatoimintojen pääkeskus' tms.?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Keskustatoiminnot' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille keskustatoiminnoille, niin tulisiko koodi '010201 Keskustatoimintojen' alue olla 'Keskustatoimintojen pääkeskus' tms.?" %}
 
 
 #### Liike- ja toimistorakentaminen
@@ -335,7 +334,7 @@ Kaavamääräyslaji (asemakaava)                                                
 [Julkisten palvelujen ja hallinnon alue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010511) | | Miten eroaa koodista 010510 Julkiset palvelut ?|
 [Muut julkiset palvelut](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010501)        | | |
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Julkiset palvelut (0105)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille julkisille palveluille, niin tulisiko koodi '010501 Julkiset palvelut' poistaa?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Julkiset palvelut (0105)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille julkisille palveluille, niin tulisiko koodi '010501 Julkiset palvelut' poistaa?" %}
 
 #### Työ ja tuotanto
 
@@ -351,7 +350,7 @@ Kaavamääräyslaji (asemakaava)                                                
 [Ympäristöhäiriötä aiheuttava teollisuustoiminta](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010607) | | |
 [Muu työpaikka tai tuotantoalue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010608) | | |
 
-{% include bug.html content="Koodistossa 'Muu työpaikka tai tuontantoalue', tulisi olla 'Muu työpaikka tai tuotantoalue'" %}
+{% include common/bug.html content="Koodistossa 'Muu työpaikka tai tuontantoalue', tulisi olla 'Muu työpaikka tai tuotantoalue'" %}
 
 #### Virkistys
 
@@ -368,7 +367,7 @@ Kaavamääräyslaji (asemakaava)                                                
 [Lähimetsä](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010708)                     | | |
 [Muu virkistysalue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010709)             | | |
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Virkistys (0107)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille virkistysalueille, niin tulisiko koodi '010701 Virkistysalue' poistaa?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Virkistys (0107)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille virkistysalueille, niin tulisiko koodi '010701 Virkistysalue' poistaa?" %}
 
 #### Loma-asuminen ja matkailu
 
@@ -403,7 +402,7 @@ Kaavamääräyslaji (asemakaava)                                                
 [Katualue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010914)                      | | |
 [Muu liikennealue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/010915)              | | |
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Liikenne (0109)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille liikennealueille, niin tulisiko koodi '010901 Liikennealue' poistaa?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Liikenne (0109)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille liikennealueille, niin tulisiko koodi '010901 Liikennealue' poistaa?" %}
 
 #### Erityisalueet
 
@@ -427,7 +426,7 @@ Kaavamääräyslaji (asemakaava)                                                
 [Vankila-alue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/011015)                  | | |
 [Muu erityisalue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/011016)               | | |
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Erityisalueet (0110)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille erityisalueille, niin tulisiko koodi '011001 Erityisalue' poistaa?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Erityisalueet (0110)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille erityisalueille, niin tulisiko koodi '011001 Erityisalue' poistaa?" %}
 
 #### Suojelu
 
@@ -441,11 +440,11 @@ Kaavamääräyslaji (asemakaava)                                                
 [Rakennussuojelulakien nojalla suojeltu alue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/011105) | | |
 [Muu suojelualue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/011106)               | | |
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Suojelu (0111)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille suojelualueille, niin tulisiko koodi '011101 Suojelualue' poistaa?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Suojelu (0111)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille suojelualueille, niin tulisiko koodi '011101 Suojelualue' poistaa?" %}
 
-{% include question.html content="Ilmausten 'Rakennuslainsäädännön nojalla' ja 'Rakennussuojelulakien nojalla' ero?" %}
+{% include common/question.html content="Ilmausten 'Rakennuslainsäädännön nojalla' ja 'Rakennussuojelulakien nojalla' ero?" %}
 
-{% include question.html content="Mitkä näistä ovat todellisuudessa asemakaavassa päätettäviä, mitkä lähtötietoaineistoja?" %}
+{% include common/question.html content="Mitkä näistä ovat todellisuudessa asemakaavassa päätettäviä, mitkä lähtötietoaineistoja?" %}
 
 #### Maa- ja metsätalous
 
@@ -460,9 +459,9 @@ Kaavamääräyslaji (asemakaava)                                                
 [Poronhoitovaltainen maa- ja metsätalousalue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/011206) | | |
 [Muu maa- ja metsätalousalue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/011207)   | | |
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Maa- ja metsätalous (0112)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille maa- ja metsätalousalueille, niin tulisiko koodi '011201 Maa- ja metsätalousalue' poistaa?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Maa- ja metsätalous (0112)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikille maa- ja metsätalousalueille, niin tulisiko koodi '011201 Maa- ja metsätalousalue' poistaa?" %}
 
-{% include question.html content="Koodi 'Poronhoitovaltainen maa- ja metsätalousalue' on koko koodiston ainoa, jossa esiintyy '-valtainen', tulisiko olla vain 'Poronhoitoalue', kun käyttötarkoituksia voidaan antaa useita?" %}
+{% include common/question.html content="Koodi 'Poronhoitovaltainen maa- ja metsätalousalue' on koko koodiston ainoa, jossa esiintyy '-valtainen', tulisiko olla vain 'Poronhoitoalue', kun käyttötarkoituksia voidaan antaa useita?" %}
 
 #### Vesialueet
 
@@ -473,9 +472,9 @@ Kaavamääräyslaji (asemakaava)                                                
 [Muu vesialue](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/011302)                  | | |
 
 
-{% include question.html content="Ei ole selvää, onko päätason koodia 'Vesialueet (0113)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikillevesialueille, niin tulisiko koodi '011301 Vesialue' poistaa?" %}
+{% include common/question.html content="Ei ole selvää, onko päätason koodia 'Vesialueet (0113)' tarkoitus voida käyttää sellaisenaan, vai vain ryhmittelyotsikkona? Jos tarkoitus olla yleiskoodi kaikillevesialueille, niin tulisiko koodi '011301 Vesialue' poistaa?" %}
 
-{% include question.html content="'Muu vesialue' ei ole mielekäs, kun vesialuetyyppejä on vain yleinen vesialue. Muu kuin mikä?" %}
+{% include common/question.html content="'Muu vesialue' ei ole mielekäs, kun vesialuetyyppejä on vain yleinen vesialue. Muu kuin mikä?" %}
 
 ### HILUCSValue (yleiskaava)
 

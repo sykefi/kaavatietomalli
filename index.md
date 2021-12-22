@@ -2,14 +2,11 @@
 layout: "default"
 title: "Kaavatietomallit"
 description: "Asema- ja yleiskaavojen kansalliset tietomallit mahdollistavat kaavatietovarantojen hyödyntämisen monipuolisesti ja tehokkaasti"
-id: "kaavatietomalli"
-model: "kaavatiedot"
+id: "johdanto"
 ---
 # Kaavatietomallit
 
 Kaavoituksessa luotavaa maankäytön ja rakentamisen suunnitelma- ja ohjaustietoa tarvitaan sekä monissa muissa rakennetun ympäristön suunnittelun ja toteutuksen piiriin kuuluvissa prosesseissa että muissa yhteiskunnan ja elinkeinoelämän prosesseissa. Kaavatiedon saattaminen kattavasti yhtenäiseen tietoaineistomuotoon mahdollistaa tämän kansallisesti merkittävän kaavatietovarannon hyödyntämisen monipuolisesti ja tehokkaasti.
-
-Kaavatietomallit-sivusto on kehittyvä ja täydentyvä kokonaisuus, jota kehitetään ympäristöministeriön [Ryhti-hankkeen](https://ym.fi/fi/ryhti) ja edelleen tietomallimuotoisen kaavatiedon soveltamiskokemusten ja kehitystarpeiden myötä. Sivuston kuvaamien tietomallien ja soveltamisohjeiden avulla eri kaavatasojen kaavatietoa voidaan tuottaa kansallisesti yhdenmukaisina konetulkittavina paikkatietoaineistoina. Sivusto sisältää tällä hetkellä Kaavatietomallin soveltamisprofiilit asema- ja yleiskaava-aineistoille.
 
 Kaavatiedon sisältö on perinteisesti kuvattu sen graafisen esitystavan, kaavakartan ja sen sisältämien vakioitujen merkintätapojen, avulla. Tietomalli, joka perustuisi vain kaavakartan ja sen merkintöjen kuvaamiseen koneluettavasti, ei täyttäisi niitä tiedon monipuoliseen analysointiin ja muihin tietoaineistoihin yhdistämiseen liittyviä vaatimuksia, joita kaavatietoon tulevaisuudessa kohdistuu. Kaavatietomallien kehitystyön tavoitteena on määritellä kansallisesti yhteiset
 * kaavaprosessin keskeiset käsitteet ja niiden keskenäiset yhteydet,
@@ -25,4 +22,4 @@ Kaavatietomallia on kehitetty seuraavissa ympäristöministeriön vetämissä ha
 * Tulevaisuuden määnkäyttöpäätökset-hanke (2019)
 * Asema- ja yleiskaavan tietomallit -projekti (syksy 2020)
 
-{% include note.html content="Kaavatietomallit-sivustosto on luotu alunperin [Asema- ja yleiskaavan tietomallit -projektin](../../projektit/ak-yk-tietomallit/) loppuraporttina syksyllä 2020" %}
+{% include common/note.html content="Kaavatietomallit-sivustosto on luotu alunperin [Asema- ja yleiskaavan tietomallit -projektin](../../projektit/ak-yk-tietomallit/) loppuraporttina syksyllä 2020" %}
