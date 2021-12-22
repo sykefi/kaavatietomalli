@@ -423,7 +423,7 @@
 				<extendedProperties tagged="0" package_name="Rakennettu ymparisto"/>
 				<packageproperties version="2.0" owner="ior" xmiver="Enterprise Architect XMI 2.1/UML 2.1" tpos="0"/>
 				<paths xmlpath="Z:\kaavatietomalli-1\looginenmalli\uml\kaavatietomalli.xml"/>
-				<times created="2020-09-16 17:04:26" modified="2021-12-20 22:08:57" lastloaddate="2021-10-14 16:36:35" lastsavedate="2021-12-21 12:58:12"/>
+				<times created="2020-09-16 17:04:26" modified="2021-12-20 22:08:57" lastloaddate="2021-10-14 16:36:35" lastsavedate="2021-12-22 11:23:32"/>
 				<flags iscontrolled="TRUE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE" packageFlags="Recurse=1;"/>
 			</element>
 			<element xmi:idref="EAID_E147A9F7_29F6_4a81_9D6C_9BC9FDE1D486" xmi:type="uml:Class" name="AbstraktiKaavakohdeLaji" scope="public">
@@ -645,7 +645,7 @@
 			<element xmi:idref="EAID_587AC2DA_71BE_49cc_90CE_1528C572EB4A" xmi:type="uml:Class" name="Kaavakohde" scope="public">
 				<model package="EAPK_FCB0EA38_A78E_42b8_BE04_2E5B89486FF7" tpos="0" ea_localid="80099" ea_eleType="element"/>
 				<properties documentation="Proposed English name: PlanObject" isSpecification="false" sType="Class" nType="0" scope="public" stereotype="FeatureType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="ior" version="1.0" phase="1.0" created="2020-10-05 11:02:45" modified="2021-12-20 22:08:56" complexity="1" status="Proposed"/>
+				<project author="ior" version="1.0" phase="1.0" created="2020-10-05 11:02:45" modified="2021-12-22 11:22:53" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags>
@@ -732,6 +732,9 @@
 						<xrefs/>
 					</attribute>
 				</attributes>
+				<constraints>
+					<constraint name="geometria-&gt;size() = 1" type="OCL" weight="0.00" status="Approved"/>
+				</constraints>
 				<links>
 					<Association xmi:id="EAID_AF7A3E49_7D75_4f05_B190_84027466A722" start="EAID_587AC2DA_71BE_49cc_90CE_1528C572EB4A" end="EAID_683E863F_67CD_4537_B4D5_14F6FBE3F025"/>
 					<Generalization xmi:id="EAID_E451986A_B5EA_4bfb_B1BA_9B9DEE53F496" start="EAID_587AC2DA_71BE_49cc_90CE_1528C572EB4A" end="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F"/>
@@ -1738,7 +1741,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_541DF740_5AE1_4150_9D96_6C55526B3FA0">
-					<model ea_localid="80187" type="Class" name="Alueidenkäyttöasia"/>
+					<model ea_localid="80241" type="Class" name="Alueidenkäyttöasia"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -1911,7 +1914,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_16FDCD6D_90B4_471c_9CD2_29335EA59CE4">
-					<model ea_localid="80215" type="Class" name="SuunnitelmanLaatija"/>
+					<model ea_localid="80269" type="Class" name="SuunnitelmanLaatija"/>
 					<role name="laatija" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -1981,7 +1984,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F">
-					<model ea_localid="80213" type="Class" name="RakennetunYmpäristönKohde"/>
+					<model ea_localid="80267" type="Class" name="RakennetunYmpäristönKohde"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2119,7 +2122,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_EDDE71D9_BD23_4802_83F1_5D5F3A59B2DA">
-					<model ea_localid="80206" type="Class" name="Määräys"/>
+					<model ea_localid="80260" type="Class" name="Määräys"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2153,7 +2156,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_E13F7EEB_BC2A_47f7_A2F8_58D290A631D7">
-					<model ea_localid="80219" type="Class" name="Tietoryhmä"/>
+					<model ea_localid="80273" type="Class" name="Tietoryhmä"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2187,7 +2190,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_581B4F10_F6C1_4cd1_AA66_0AFDE39CA434">
-					<model ea_localid="80179" type="Class" name="AbstraktiAsianElinkaaritila"/>
+					<model ea_localid="80233" type="Class" name="AbstraktiAsianElinkaaritila"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2221,7 +2224,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_7FE1D815_70B5_467a_8F8E_A7A160F00708">
-					<model ea_localid="80180" type="Class" name="AbstraktiKäsittelytapahtumanLaji"/>
+					<model ea_localid="80234" type="Class" name="AbstraktiKäsittelytapahtumanLaji"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2255,7 +2258,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_D0E1693F_2554_45d1_9EC3_8B744317F1B8">
-					<model ea_localid="80184" type="Class" name="AbstraktiVuorovaikutustapahtumanLaji"/>
+					<model ea_localid="80238" type="Class" name="AbstraktiVuorovaikutustapahtumanLaji"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2289,7 +2292,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80222" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80276" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2357,7 +2360,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_29ED9917_41FE_4c16_B7CB_A9AF19623264">
-					<model ea_localid="80220" type="Class" name="Tietoyksikko"/>
+					<model ea_localid="80274" type="Class" name="Tietoyksikko"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2391,7 +2394,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_570DAF85_9077_4b24_B659_D03E578A156E">
-					<model ea_localid="80181" type="Class" name="AbstraktiLisätiedonLaji"/>
+					<model ea_localid="80235" type="Class" name="AbstraktiLisätiedonLaji"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2425,7 +2428,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_570DAF85_9077_4b24_B659_D03E578A156E">
-					<model ea_localid="80181" type="Class" name="AbstraktiLisätiedonLaji"/>
+					<model ea_localid="80235" type="Class" name="AbstraktiLisätiedonLaji"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2459,7 +2462,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80222" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80276" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
