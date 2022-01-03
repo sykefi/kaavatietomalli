@@ -56,7 +56,7 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 
 #### Kaavatiedot-paketti
 
-**Kaava-luokka**
+**Kaava**
 
 * Yläluokka on muutettu ```MKP-ydin::AbstraktiMaankayttoasia``` -> ```Yhteiset::AlueidenKäyttöasia```
 * Lisätty attribuutti ```oikeusvaikutteisuus```, joka oli ennen yläluokassa ```AbstraktiMaankayttoasia```.
