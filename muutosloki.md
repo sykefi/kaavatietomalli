@@ -17,7 +17,7 @@ Siirrytty käyttämään {% include common/moduleLink.html moduleId="yhteisetkom
 
 #### MKP-ydin -paketti
 
-Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/" title="Yhteiset komponentit" %}-malliin. Yksityiskohteiset muutokset alla.
+Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/" title="Yhteiset komponentit" %}-malliin. Yksityiskohtaiset muutokset alla.
 
 **AbstraktiVersioituObjekti**
 
@@ -61,14 +61,17 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 * Yläluokka on muutettu ```MKP-ydin::AbstraktiMaankayttoasia``` -> ```Yhteiset::AlueidenKäyttöasia```
 * Lisätty attribuutti ```oikeusvaikutteisuus```, joka oli ennen yläluokassa ```AbstraktiMaankayttoasia```.
 * Attribuutti ```virelletuloAika``` on siirretty yläluokkaan ```Yhteiset::AlueidenKäyttöasia```.
+* Attribuutti ```elinkaaritila:KaavanElinkaarenTila``` on siirretty yläluokan ```Yhteiset::AlueidenKäyttöasia``` attribuutiksi ```elinkaaritila:AbstraktiAsianElinkaaritila```.
+* Lisätty rajoite, joka vaatii ```elinkaaritila``` attribuutin olevan tyyppiä ```KaavanElinkaaritila```.
 * Attribuutti ```hyväksymisAika``` ilmaistaan nyt ```KaavanHyväksymispäätös```-luokan attribuutilla ```päätöspäivämäärä```, jonka tyyppi on ```Date```. Yhteys ```KaavanHyväksymispäätös```-luokkaan menee yläluokan ```Yhteiset::AlueidenKäyttöasia``` assosiaation ```päätös``` kautta.
+* Lisätty attribuutti ```voimassaoloAika:TM_Period[0..1]```, joka periytyi aiemmin yläluokasta ```AbstraktiMaankayttoasia```.
 * Assosiaatio ```laatija``` viittaa nyt luokkaan ```Yhteiset::SuunnitelmanLaatija``` aiemman ```KaavanLaatija```-luokan sijasta.
 * Assosiaatiot ```osallistumisJaArviointisuunnitelma``` ja ```selostus``` ovat nyt kaksisuuntaisia, ja ```Kaava```-luokan päässä kompositio-tyyppisiä. Tämä [vaikuttaa elinkaarisääntöihin](looginenmalli/elinkaarisaannot.html#muutosten-levi%C3%A4minen-viittausten-kautta) siten, että kunkin uuden Kaava-luokan version tallennuksen yhteydessä tulee muodostaa uudet versiot myös assosioiduista Kaavaselostus- ja OsallistumisJaArviointisuunnitelma-luokkien instansseista. Uudet instanssit voivat kuitenkin niin haluttaessa viitata samaan, aiemmin tallennettuun dokumenttiin.
 * Assosiaatiot ```kaavakohde```, ```kaavamääräys```, ja ```kaavasuositus``` ovat nyt kaksisuuntaisia. Tähän liittyen yläluokkien ```AbstraktiTietoyksikko```- ja ```AbstraktiKaavakohde```-luokista ```Kaavamääräys```-,```Kaavasuositus```- ja ```Kaavakohde```-luokkiin periytyneet erilliset ```kaava``` assosiaatiot on poistettu.
 
 **AbstraktiKaavakohde**
 
-* Yleistetty ja siirretty Yhteiset komponentit -mallin luokkaksi ```RakennetynYmpäristönKohde```
+* Yleistetty ja siirretty Yhteiset komponentit -mallin luokkaksi ```RakennetunYmpäristönKohde```
 * Lisätty uusi attribuutti ```kuvaus:LanguageString[0..*]```.
 
 **AbstraktiTietoyksikko**
@@ -78,7 +81,7 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 * Lisätty uusi kaksisuuntainen assosiaatio ```ryhmä:Tietoryhmä[0..1]```.
 * Muutettu assosiaatio ```kohdistus``` viittaamaan ```Yhteiset::RakennetunYmpäristönKohde```-luokkaan ```AbstraktiKaavakohde``` luokan asemesta.
 
-**KaavanaLaatija**
+**KaavanLaatija**
 
 * Yleistetty ja siirretty Yhteiset komponentit -mallin luokkaksi ```SuunnitelmanLaatija```.
 
@@ -125,6 +128,7 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 * Uudelleennimetty attribuutti ```rekisterinNimi:LanguageString[0..*]``` -> ```järjestelmänNimi:LanguageString[0..*]```.
 
 **Suunnittelukohde**
+
 Poistettu, oli jäänyt UML-mallin 1.0-versioon epähuomiossa.
 
 
