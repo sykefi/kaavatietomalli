@@ -4,6 +4,10 @@ description: "Tietomallin muutokset versiosta toiseen"
 id: "muutosloki"
 ---
 # Muutosloki
+{:.no_toc}
+
+1. 
+{:toc}
 
 ## Muutokset versiosta 1.0 -> 2.0.0
 
