@@ -117,7 +117,7 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 
 **AbstraktiArvo ja sen aliluokat Ajanhetkiarvo, Aikaväliarvo, GeometriaArvo, Koodiarvo, NumeerinenArvo, NumeerinenArvoväli, Korkauspiste, Korkeusväli ja TekstiArvo**
 
-* Uudelleennimetty ```AbstraktiArvo```-luokka ```OminaisuudenArvo```-nimiseksi. Siirretty aliluokkieen Yhteiset komponentit -malliin muutoi sellaisenaan.
+* Uudelleennimetty ```AbstraktiArvo```-luokka ```OminaisuudenArvo```-nimiseksi. Siirretty aliluokkieen Yhteiset komponentit -malliin muutoin sellaisenaan.
 
 **Tunnusarvo**
 
