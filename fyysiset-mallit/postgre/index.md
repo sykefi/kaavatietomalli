@@ -1,4 +1,4 @@
 ---
 layout: "redirect"
-redirectTo: "projektit/ak-yk-tietomallit/fyysiset-mallit/postgre/"
+redirectPath: "projektit/ak-yk-tietomallit/fyysiset-mallit/postgre/"
 ---
