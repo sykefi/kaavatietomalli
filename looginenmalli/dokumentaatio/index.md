@@ -2,8 +2,10 @@
 layout: "default"
 description: ""
 id: "dokumentaatio"
-status: "Ehdotus"
+status: "Keskeneräinen"
 ---
+{% include common/important.html content="Sisältö ei vielä ajantasalla UML-kaavion kanssa" %}
+
 # Loogisen tason kaavatietomalli
 {:.no_toc}
 

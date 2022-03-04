@@ -2,8 +2,9 @@
 layout: "default"
 description: ""
 id: "elinkaarisaannot"
-status: "Ehdotus"
+status: "Keskeneräinen"
 ---
+{% include common/important.html content="Sisältö ei vielä ajantasalla UML-kaavion kanssa" %}
 # Elinkaarisäännöt
 {:.no_toc}
 

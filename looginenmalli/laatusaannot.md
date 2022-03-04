@@ -2,8 +2,9 @@
 layout: "default"
 description: ""
 id: "laatusaannot"
-status: "Ehdotus"
+status: "Keskeneräinen"
 ---
+{% include common/important.html content="Sisältö ei vielä ajantasalla UML-kaavion kanssa" %}
 # Laatusäännöt
 {:.no_toc}
 

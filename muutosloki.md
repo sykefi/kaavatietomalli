@@ -35,13 +35,13 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 
  **AbstraktiMaankayttoasia**
 
- * Muutettu nimi -> ```Alueidenkäyttöasia```.
+ * Muutettu nimi -> ```AlueidenkäyttöJaRakentamisasia```.
  * Lisätty uusi attrbuutti ```asianhallintaTunnus:Tunnusarvo[0..*]```.
  * Poistettu attribuutti ```oikeusvaikutteisuus:OikeusvaikutteisuudenLaji[0..1]```.
  * Muutettu assosiaatio ```asianLiite:Asiakirja[0..*]``` attribuutiksi ```asianLiite:Asiakirja[0..*]``` (```Yhteiset::Asiakirja``` on nyt stereotyypillä DataType, ei enää FeatureType).
  * Poistettu attribuutti ```voimassaoloAika:TM_Period[0..1]```.
  * Uudelleennimetty assosiaatio ```koskeeHallinnollistaAluetta``` -> ```hallinnollinenAlue```. 
- * Uudelleennimetty assosiaatio ```hyodynnettyAineisto``` -> ```liittyväAineisto```.
+ * Uudelleennimetty assosiaatio ```hyodynnettyAineisto``` -> ```liittyväAineisto``` ja siirretty luokkaan ```Alueidenkäyttösuunnitelma```.
  * Muutettu assosiaatio ```vastuullinenOrganisaatio:Organisaatio[0..1]``` -> ```vastuutaho:Toimija[0..1]```.
 
 **AbstraktiTapahtuma**
@@ -58,12 +58,12 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 
 **Kaava**
 
-* Yläluokka on muutettu ```MKP-ydin::AbstraktiMaankayttoasia``` -> ```Yhteiset::AlueidenKäyttöasia```
+* Yläluokka on muutettu ```MKP-ydin::AbstraktiMaankayttoasia``` -> ```Yhteiset::AlueidenKäyttösuunnitelma```
 * Lisätty attribuutti ```oikeusvaikutteisuus```, joka oli ennen yläluokassa ```AbstraktiMaankayttoasia```.
-* Attribuutti ```virelletuloAika``` on siirretty yläluokkaan ```Yhteiset::AlueidenKäyttöasia```.
-* Attribuutti ```elinkaaritila:KaavanElinkaarenTila``` on siirretty yläluokan ```Yhteiset::AlueidenKäyttöasia``` attribuutiksi ```elinkaaritila:AbstraktiAsianElinkaaritila```.
+* Attribuutti ```virelletuloAika``` on siirretty yläluokkaan ```Yhteiset::AlueidenkäyttöJaRakentamisasia```.
+* Attribuutti ```elinkaaritila:KaavanElinkaarenTila``` on siirretty yläluokan ```Yhteiset::AlueidenkäyttöJaRakentamisasia``` attribuutiksi ```elinkaaritila:AbstraktiAsianElinkaaritila```.
 * Lisätty rajoite, joka vaatii ```elinkaaritila``` attribuutin olevan tyyppiä ```KaavanElinkaaritila```.
-* Attribuutti ```hyväksymisAika``` ilmaistaan nyt ```KaavanHyväksymispäätös```-luokan attribuutilla ```päätöspäivämäärä```, jonka tyyppi on ```Date```. Yhteys ```KaavanHyväksymispäätös```-luokkaan menee yläluokan ```Yhteiset::AlueidenKäyttöasia``` assosiaation ```päätös``` kautta.
+* Attribuutti ```hyväksymisAika``` ilmaistaan nyt ```AlueidenkäyttösuunnitelmanHyväksymispäätös```-luokan perityllä attribuutilla ```päätöspäivämäärä```, jonka tyyppi on ```Date```. Yhteys ```AlueidenkäyttösuunnitelmanHyväksymispäätös```-luokkaan menee yläluokan ```Yhteiset::AlueidenkäyttöJaRakentamisasia``` assosiaation ```päätös``` kautta.
 * Lisätty attribuutti ```voimassaoloAika:TM_Period[0..1]```, joka periytyi aiemmin yläluokasta ```AbstraktiMaankayttoasia```.
 * Assosiaatio ```laatija``` viittaa nyt luokkaan ```Yhteiset::SuunnitelmanLaatija``` aiemman ```KaavanLaatija```-luokan sijasta.
 * Assosiaatiot ```osallistumisJaArviointisuunnitelma``` ja ```selostus``` ovat nyt kaksisuuntaisia, ja ```Kaava```-luokan päässä kompositio-tyyppisiä. Tämä [vaikuttaa elinkaarisääntöihin](looginenmalli/elinkaarisaannot.html#muutosten-levi%C3%A4minen-viittausten-kautta) siten, että kunkin uuden Kaava-luokan version tallennuksen yhteydessä tulee muodostaa uudet versiot myös assosioiduista Kaavaselostus- ja OsallistumisJaArviointisuunnitelma-luokkien instansseista. Uudet instanssit voivat kuitenkin niin haluttaessa viitata samaan, aiemmin tallennettuun dokumenttiin.
@@ -101,8 +101,8 @@ Paketin luokat yleistetty ja siirretty {% include common/moduleLink.html moduleI
 
 **Kaavamääräys**
 
-* Periytyy nyt uudesta luokasta ```Yhteiset::Määräys```.
-* Attribuutti ```Lisätieto``` peritytyy nyt yläluokasta ```Yhteiset::Määräys```.
+* Periytyy nyt uudesta luokasta ```Yhteiset::AlueidenkäyttöJaRakentamismääräys```.
+* Attribuutti ```Lisätieto``` peritytyy nyt yläluokasta ```Yhteiset::AlueidenkäyttöJaRakentamismääräys```.
 * Uusi pakollinen attribuutti ```määräysumero:int```.
 * Lisätty rajoite, joka vaatii ```kohdistus```-assosiaation tyypin olevan ```Kaavakohde```.
 * Assosiaatio ```liittyväAsiakirja``` on korvattu yliluokan ```Yhteiset::Tietoyksikkö``` attribuutilla ```liittyväAsiakirja```.
