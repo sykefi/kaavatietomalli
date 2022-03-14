@@ -1,0 +1,13 @@
+tocTab[tocTab.length] = new Array("0.1.2:1", "", "Rakentamisen määrä - käyttötarkoituksittain jaettu kerrosala", "EARoot/EA1/EA2/EA19.html", "177.png", "38723", "0", "", "Object diagram0","{27C5B1A5-AD14-4284-9FB0-0831A278C5EC}");
+tocTab[tocTab.length] = new Array("0.1.2:2", "", "ka1_j", "EARoot/EA1/EA2/EA22.html", "25.png", "E79776", "0", "", "Object0","{2F733E31-FFF4-434f-B9D4-661F8C12D7A2}");
+tocTab[tocTab.length] = new Array("0.1.2:3", "", "ka2_j", "EARoot/EA1/EA2/EA23.html", "25.png", "E79784", "0", "", "Object0","{9BA1C7DF-541F-494d-AF4A-0AE509E3C875}");
+tocTab[tocTab.length] = new Array("0.1.2:4", "", "kk1: Suunnittelukohde", "EARoot/EA1/EA2/EA24.html", "25.png", "E79752", "0", "", "Object0","{D3ECDAFA-D2EB-4ca7-836C-FAE86F1FDD9B}");
+tocTab[tocTab.length] = new Array("0.1.2:5", "", "kk1_j: Suunnittelukohde", "EARoot/EA1/EA2/EA25.html", "25.png", "E79772", "0", "", "Object0","{78F9104D-511C-4e75-99A1-22ABFF0DD64E}");
+tocTab[tocTab.length] = new Array("0.1.2:6", "", "km1_j: Kaavamaarays", "EARoot/EA1/EA2/EA26.html", "25.png", "E79773", "0", "", "Object0","{D1A04421-627A-4143-9D17-42ACDC9A3976}");
+tocTab[tocTab.length] = new Array("0.1.2:7", "", "km2_j: Kaavamaarays", "EARoot/EA1/EA2/EA27.html", "25.png", "E79775", "0", "", "Object0","{9DC8B904-93C0-475c-A91F-F04877B85BAF}");
+tocTab[tocTab.length] = new Array("0.1.2:8", "", "km5_j: Kaavamaarays", "EARoot/EA1/EA2/EA28.html", "25.png", "E79783", "0", "", "Object0","{C7036445-5D08-405f-8A16-CE77D3D59D7A}");
+tocTab[tocTab.length] = new Array("0.1.2:9", "", "kt_l1: Lisatieto", "EARoot/EA1/EA2/EA29.html", "25.png", "E79714", "0", "", "Object0","{35805701-F17E-4d6e-9359-79576BD962CC}");
+tocTab[tocTab.length] = new Array("0.1.2:10", "", "kt_l2: Lisatieto", "EARoot/EA1/EA2/EA30.html", "25.png", "E79716", "0", "", "Object0","{DC500147-0840-434b-ACE1-629B4222BBFF}");
+tocTab[tocTab.length] = new Array("0.1.2:11", "", "kt_maara1: NumeerinenArvovali", "EARoot/EA1/EA2/EA31.html", "25.png", "E79695", "0", "", "Object0","{B5FBE0D9-6890-4458-9B5F-A3BF11153E6F}");
+tocTab[tocTab.length] = new Array("0.1.2:12", "", "kt_maara2: NumeerinenArvovali", "EARoot/EA1/EA2/EA32.html", "25.png", "E79698", "0", "", "Object0","{59652FDE-17B4-4927-A6D1-F3B9C6AD96EE}");
+tocTab[tocTab.length] = new Array("0.1.2:13", "", "na1_j: NumeerinenArvo", "EARoot/EA1/EA2/EA33.html", "25.png", "E79777", "0", "", "Object0","{3599344F-AB3E-402f-AEA7-6207043496FB}");

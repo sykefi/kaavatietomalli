@@ -1,1 +1,0 @@
-Tämän on vaihekaava, jossa on samassa useampi alue. Testattiin myös niin, että tehtiin jokaisesta alueesta oma vaihekaava, mutta tämä osoittautui paremmaksi. Ohessa on tiedoksi myös kokeilujen pohjalta tehty Espoon sisäinen ohje vaihekaavojen tekoon.
