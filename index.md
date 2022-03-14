@@ -15,11 +15,11 @@ Kaavatiedon sisältö on perinteisesti kuvattu sen graafisen esitystavan, kaavak
 
 Kaavatietomallissa on pyritty irti ajatuksesta että olisi olemassa yksi oikea kaavatiedon esittämistapa tai visualisointi, ja sen sijaan pyritty kuvaamaan kaavat kaavamääräyksistä koostuvina tietosisältöinä, jotka voidaan kohdistaa paikkatietona tarpeellisella tarkkuudella kaavan alueella. Yhteisiä esitystapamäärittelyjä kaavatiedolle tarvitaan edelleen, mutta kaavan normatiivinen sisältö ei muodostu tietystä visualisoinnista, vaan kaavatiedon loogisen tietomallin mukaisesta rakenteisesta tietosisällöstä. 
 
-Kaavatietomallin ensisijainen sovelluskohde on [Rakennetyn ympäristön tietojärjestelmä](https://ym.fi/fi/ryhti), johon tulevaisuudessa kootaan kuntien kaavoitusprosesseissa luotava tietomallimuotoinen kaavatieto. Kaavatietomallin mahdollisina sovelluskohteina ovat kuitenkin lisäksi kaikki tietojärjestelmät, joissa luodaan, käsitellään, analysoidaan ja siirretään kaavatietoa. Kaavatietomalli on suunniteltu siten, että sen sisältämiin rakenteisiin osiin voidaan yksilöivien tunnusten avulla helposti viitata sen ulkopuolisista tietomalleista ja -järjestelmistä. Näin kaavan ydinsisältöä voidaan tarpeen mukaan rikastaa tietojärjestelmäkohteisilla laajennoksilla monimutkaistamatta tietomallin perusrakennetta.
+Kaavatietomallia sovelletaan ensisijaisesti kuntien alueiden käytön ja rakentamisen suunnittelun ja valvonnan tietojärjestelmissä ja [Rakennetyn ympäristön tietojärjestelmässä](https://ym.fi/ryhti/rytj). Kaavatietomallin mahdollisina sovelluskohteina ovat kuitenkin lisäksi kaikki muutkin tietojärjestelmät, joissa luodaan, käsitellään, analysoidaan ja siirretään kaavatietoa yhteentoimivasti. Kaavatietomalli on suunniteltu siten, että sen sisältämiin rakenteisiin osiin voidaan yksilöivien tunnusten avulla helposti viitata sen ulkopuolisista tietomalleista ja -järjestelmistä. Näin kaavan ydinsisältöä voidaan tarpeen mukaan rikastaa tietojärjestelmäkohteisilla laajennoksilla monimutkaistamatta tietomallin perusrakennetta.
 
 Kaavatietomallia on kehitetty seuraavissa ympäristöministeriön vetämissä hankkeissa:
 * Paikkatietoalusta - Maankäyttöpäätökset -osahanke (2017-2019), erityisesti sen Kuntapilotti-projekti
 * Tulevaisuuden määnkäyttöpäätökset-hanke (2019)
 * Asema- ja yleiskaavan tietomallit -projekti (syksy 2020)
+* Rakennetun ympäristön tietomallien harmonisointi (syksy 2021 - kevät 2022)
 
-{% include common/note.html content="Kaavatietomallit-sivustosto on luotu alunperin [Asema- ja yleiskaavan tietomallit -projektin](../../projektit/ak-yk-tietomallit/) loppuraporttina syksyllä 2020" %}

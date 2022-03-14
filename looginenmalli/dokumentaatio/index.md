@@ -457,6 +457,20 @@ Roolinimi        | Role name          | Kohde               | Kardinaliteetti | 
 maarays          | regulation         | [Kaavamaarays](#kaavamaarays) | 0..*  | kaavamääräys, joka kohdistuu tämän kaavakohteen alueelle
 suositus         | guidance           |[ Kaavasuositus](#kaavasuositus) | 0..*  | kaavasuositus, joka kohdistuu tämän kaavakohteen alueelle
 
+### Kaavayksikko
+Englanninkielinen nimi: **PlanningUnit**
+
+Kuvaa käsitteen [Kaavayksikkö](../../kasitemalli/#kaavayksikkö), erikoistaa luokkaa [Kaavakohde](#kaavakohde), stereotyyppi: FeatureType (kohdetyyppi)
+
+**Ominaisuudet**
+
+Nimi             | Name               | Tyyppi                       | Kardinaliteetti | Kuvaus
+-----------------|--------------------|------------------------------|-----------------|------------------------------------
+laji             | type               | [KaavayksikonLaji](#kaavayksikonlaji) | 1 | kaavayksikön luokittelu
+kiinteisto       | property           | [Muodostajakiinteisto](#muodostajakiinteisto) | 0..* | niiden kiinteistojen tiedot, joista kaavayksikkö on muodostettu
+
+
+
 ### Kaavamaarays
 
 Englanninkielinen nimi: **PlanRegulation**
@@ -498,6 +512,43 @@ voimassaoloAika  | validityTime       | [TM_Period](#tm_period)      | 0..1     
 Roolinimi        | Role name          | Kohde               | Kardinaliteetti | Kuvaus
 -----------------|--------------------|---------------------|-----------------|------------------------------------
 liittyvaAsiakirja | relatedDocument   | [Asiakirja](#asiakirja) | 0..*        | asiakirja, joka on perustelee kaavasuositusta tai liittyy siihen muulla tavalla. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring), joka kuvaa liittymistavan.
+
+
+### Kaavamaaraysryhma
+
+Englanninkielinen nimi: **PlanGuidance**
+
+Kuvaa käsitteen [Kaavamääräysryhmä](../../kasitemalli/#kaavamääräysryhmä), erikoistaa luokkaa [AbstraktiTietoyksikko](#abstraktitietoyksikko), stereotyyppi: FeatureType (kohdetyyppi)
+
+Kaavamääräysryhmä on kokoelma kaavamääräyksiä ja/tai -suosituksia, jotka halutaan kaavassa liittää kokonaisuutena useampaan kuin yhteen Kaavakohteeseen. Kaavamääräysryhmiä je niiden numeroja käyttämällä voidaan helpommin tunnistaa ja visualisoida määräysten ja suositusten kannalta hyvin samankaltaiset kaavakohteet kaavan sisällä.
+
+**Ominaisuudet**
+
+Nimi             | Name               | Tyyppi                       | Kardinaliteetti | Kuvaus
+-----------------|--------------------|------------------------------|-----------------|------------------------------------
+ryhmanumero      | groupNumber        | int                          | 1               | juokseva, yksilöivä ryhmänumero kaavan sisällä
+
+**Assosiaatiot**
+
+Roolinimi        | Role name          | Kohde               | Kardinaliteetti | Kuvaus
+-----------------|--------------------|---------------------|-----------------|------------------------------------
+jasen            | member             | [AbstraktiTietoyksikko](#abstraktitietoyksikko) | 1..* | ryhmän jäsen |
+
+
+### Muodostajakiinteisto
+
+Englanninkielinen nimi: **FormingProperty**
+
+Kuvaa yhteyden rekisteröityyn kiinteistöön tai sen osaan, jonka pohjalta jokin kohde on muodostettu. Stereotyyppi: DataType (tietotyyppi)
+
+**Ominaisuudet**
+
+Nimi             | Name               | Tyyppi                       | Kardinaliteetti | Kuvaus
+-----------------|--------------------|------------------------------|-----------------|------------------------------------
+kiinteistoTunnus | propertyId         | [CharacterString](#characterstring) | 1        | kiinteistörekisterin kiinteistötunnus
+sisaltyyKokonaan | includedCompletely | boolean                      | 1               | tosi, jos viitattu kiinteistön alue kuuluu kokonaan muodostetun kohteen geometrian sisään
+sisaltyvaPintaAla | includedArea      | [Measure](#measure)          | 0..1            | pinta-ala, joka kiinteistöstä sisältyy muodostettun kohteen geometrian sisään
+
 
 ### Lisatieto
 

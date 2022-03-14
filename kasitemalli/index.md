@@ -65,6 +65,13 @@ Viittaukset toisiin käsitteisiin:
 
 Viittaukset toisiin käsitteisiin:
 * [Kaava](#kaava) [1]: kaavan versio, johon kohde sisältyy
+* [Kaavamääräys](#kaavamääräys) [0..*]: kaavamääräykset, jotka kohteeseen kohdistuvat
+* [Kaavasuositus](#kaavasuositus) [0..*]: kaavasuositukset, jotka kohteeseen kohdostuvat
+* [Kaavamääräysryhmä](#kaavamääräysryhmä) [0..*]: kaavamääräysryhmät, jotka kohteeseen kohdistuvat
+
+### Kaavayksikkö
+{% include common/definitionref.html dict="rakymp" id="c127" name="kaavayksikkö" def="asemakaavan pienin tiettyyn käyttötarkoitukseen varattu yksikkö." note="Kaavayksikkö on kaavakohteen erikoistapaus, ja se toimii teknisenä apuvälineenä asemakaavan ja kiinteistönmuodostuksen välillä kuvaten kiinteistöt tai kiinteistöjen osat, joista kaavayksikkö on muodostuu. Kaavayksikkö-käsite on käytössä vain asemakaavoissa." %}
+
 
 ### Kaavamääräys
 {% include common/definitionref.html dict="rytj-kaava" id="concept-1010" name="kaavamääräys" def="kaavaan sisältyvä velvoittava määräys, jolla ohjataan alueiden suunnittelua ja rakentamista." note="Kaavoissa käytettävät kaavamääräysten lajit on yhteisesti sovittu. Määräys voi kohdistua joko yksittäiseen kaavakohteeseen tai koko kaavaan. Kaavamääräykseen voi sisältyä sen lajiin perustuvaa ohjausvaikutusta tarkentavia arvoja ja lisätietoja." %}
@@ -83,6 +90,13 @@ Viittaukset toisiin käsitteisiin:
 * [Arvo](#arvo) [0..*]: tarkentava arvo
 * [Kaavakohde](#kaavakohde) [0..*]: kaavakohteiden versio, johon suosituksen vaikutus kohdistuu. Jos ei ole, on kyseessä yleissuositus
 
+### Kaavamääräysryhmä
+{% include common/definitionref.html name="kaavamääräysryhmä" def="kaavan kaavamääräysten ja kaavasuositusten yhdistelmä, joka kokonaisuutena halutaan kohdistaa useampaan kuin yhteen kaavakohteeseen." note="Kaavamääräysryhmän avulla voidaan sekä välttää samojen kaavamääräysten toistaminen lukuisia kertoja kaavan sisällä että antaa kaavan sisällä yksilöivä tunnus tietylle, samanlaisena usein toistuvalle määraysten ja suositusten ryhmälle." %}
+
+Viittaukset toisiin käsitteisiin:
+* [Kaavakohde](#kaavakohde) [1..*]: kaavakohteiden versiot, joihin ryhmään kuuluvat kaavamääräysten ja -suositusten vaikutus kohdistuu.
+* [Kaavasuositus](#kaavasuositus) [0..*]: kaavasuositukset, jotka kuuluvat ryhmään
+* [Kaavamääräysryhmä](#kaavamääräysryhmä) [0..*]: kaavamääräysryhmät, jotka kuuluvat ryhmään
 
 ### Lisätieto
 {% include common/definitionref.html dict="rytj-kaava" id="concept-2003" name="kaavamääräyksen lisätieto" def="kaavamääräyksen tietosisältöä tarkentava nimetty ominaisuus ja sen mahdollinen arvo." note="Kaavoissa käytettävät lisätiedon lajit on yhteisesti sovittu. Lisätiedolla voidaan esimerkiksi rajata tai kohdistaa määräyksen ohjausvaikutusta." %}
