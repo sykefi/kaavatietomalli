@@ -35,7 +35,7 @@ Kaavatietomallin mukaisten aineistojen tulee noudattaa Kaavatietomallin [elinkaa
 
 ### Soveltamisohjeiden mukaisuus
 {% include common/clause_start.html type="req" id="laatu/vaat-soveltamisohjeet" %}
-Kaavatietomallin mukaisten aineistojen tulee noudattaa niiden kaavalajikohtaisten soveltamisprofiilien ([Asemakaava](../soveltamisohjeet/asemakaava/), [Yleiskaava](../soveltamisohjeet/yleiskaava/)) vaatimuksia, ja niiden on suositeltavaa noudattaa soveltamisprofiilien suosituksia. Vaatimukset ja suositukset on erotettu selkeästi soveltamisprofiilien muusta sisällöstä.
+Kaavatietomallin mukaisten aineistojen tulee noudattaa niiden kaavalajikohtaisten soveltamisprofiilien ([Asemakaava](/kaavatiedot/soveltamisprofiili/asemakaava/), [Yleiskaava](/kaavatiedot/soveltamisprofiili/yleiskaava/)) vaatimuksia, ja niiden on suositeltavaa noudattaa soveltamisprofiilien suosituksia. Vaatimukset ja suositukset on erotettu selkeästi soveltamisprofiilien muusta sisällöstä.
 {% include common/clause_end.html %}
 
 ### Merkkijonojen käyttö
