@@ -460,7 +460,7 @@ suositus         | guidance           |[ Kaavasuositus](#kaavasuositus) | 0..*  
 ### Kaavayksikko
 Englanninkielinen nimi: **PlanningUnit**
 
-Kuvaa käsitteen [Kaavayksikkö](http://uri.suomi.fi/terminology/rakymp/c127), erikoistaa luokkaa [Kaavakohde](#kaavakohde), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaavayksikkö](../../kasitemalli/#kaavayksikkö), erikoistaa luokkaa [Kaavakohde](#kaavakohde), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -518,7 +518,7 @@ liittyvaAsiakirja | relatedDocument   | [Asiakirja](#asiakirja) | 0..*        | 
 
 Englanninkielinen nimi: **PlanGuidance**
 
-Kuvaa käsitteen Kaavamääräysryhmä, erikoistaa luokkaa [AbstraktiTietoyksikko](#abstraktitietoyksikko), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaavamääräysryhmä](../../kasitemalli/#kaavamääräysryhmä), erikoistaa luokkaa [AbstraktiTietoyksikko](#abstraktitietoyksikko), stereotyyppi: FeatureType (kohdetyyppi)
 
 Kaavamääräysryhmä on kokoelma kaavamääräyksiä ja/tai -suosituksia, jotka halutaan kaavassa liittää kokonaisuutena useampaan kuin yhteen Kaavakohteeseen. Kaavamääräysryhmiä je niiden numeroja käyttämällä voidaan helpommin tunnistaa ja visualisoida määräysten ja suositusten kannalta hyvin samankaltaiset kaavakohteet kaavan sisällä.
 
