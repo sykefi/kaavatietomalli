@@ -98,7 +98,7 @@ Inspire Planned Land Use -skeeman ```ZoningElement```-luokan tiedot johdetaan lo
 
 ### SupplementaryRegulation
 
-Inspire Planned Land Use -skeeman ```SupplementaryRegulation```-luokan tiedot johdetaan loogisen tason Kaavatietomallin [Kaavakohde](dokumentaatio/#kaavakohde)-luokan ja siihen liittyvän [Kaavamaarays](dokumentaatio/#kaavamaarays)-luokan tiedoista alla esitettyjen taulukoiden mukaisesti. Syötteeksi valitaan ne Kaavakohde-luokkien instanssit, jotka eivät ole [asemakaavan käyttötarkoitusalue](/kaavatiedot/soveltamisprofiili/soveltamisohjeet/asemakaava/v1.0/laatusaannot.html#sov-ak-vaat-kayttotarkoitusalue-maar)- tai [yleiskaavan aluevaraus](../soveltamisohjeet/yleiskaava/#sov-yk-vaat-aluevaraus-maar) -tyyppisiä, eli joihin ei liity yhtään alueen käyttötarkoitus -tyyppistä kaavamääräystä.
+Inspire Planned Land Use -skeeman ```SupplementaryRegulation```-luokan tiedot johdetaan loogisen tason Kaavatietomallin [Kaavakohde](dokumentaatio/#kaavakohde)-luokan ja siihen liittyvän [Kaavamaarays](dokumentaatio/#kaavamaarays)-luokan tiedoista alla esitettyjen taulukoiden mukaisesti. Syötteeksi valitaan ne Kaavakohde-luokkien instanssit, jotka eivät ole [asemakaavan käyttötarkoitusalue](/kaavatiedot/soveltamisprofiili/soveltamisohjeet/asemakaava/v1.0/laatusaannot.html#sov-ak-vaat-kayttotarkoitusalue-maar)- tai [yleiskaavan aluevaraus](/kaavatiedot/soveltamisprofiili/soveltamisohjeet/yleiskaava/v1.0/laatusaannot.html#sov-yk-vaat-aluevaraus-maar) -tyyppisiä, eli joihin ei liity yhtään alueen käyttötarkoitus -tyyppistä kaavamääräystä.
 
 
 | Attribuutti                   |  Johtaminen Kaavatietomallin tiedoista        | Huomautukset
