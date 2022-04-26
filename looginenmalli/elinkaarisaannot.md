@@ -118,14 +118,14 @@ Esimerkki: ```http://uri.suomi.fi/object/rytj/kaava```
 
 ### Viittaustunnus
 {% include common/clause_start.html type="req" id="elinkaari/vaat-viittaustunnus-maar" %}
-Viittaustunnus yksilöi kaavan tietokohteen yhden, keskitettyyn kaavatietovaraston tallentun kehitysversion globaalisti. Kaavatietomallin tietokohteissa paikallinen tunnus kuvataan attribuutilla ```viittausTunnus```.
+Viittaustunnus yksilöi kaavan tietokohteen yhden, keskitettyyn kaavatietovaraston tallentun kehitysversion globaalisti. Kaavatietomallin tietokohteissa viittaustunnus kuvataan attribuutilla ```viittausTunnus```.
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="elinkaari/vaat-viittaustunnus-form" %}
 Viittaustunnus on HTTP URI -muotoinen ja se muodostuu nimiavaruudesta, tietokohteen luokan nimestä ja paikallisesta tunnuksesta yhdessä kauttaviivoilla (```/```) erotettuina.
 {% include common/clause_end.html %}
 
-{% include common/clause_start.html type="req" id="elinkaari/vaat-nimiavaruus-gen" %}
+{% include common/clause_start.html type="req" id="elinkaari/vaat-viittaustunnus-gen" %}
 Kaavatietovarasto vastaa ```viittausTunnus```-attribuuttien asetamisesta tallennustapahtuman yhteydessä. Tuottavan tietojärjestelmän mahdollisesti antamat arvot korvataan.
 {% include common/clause_end.html %}
 

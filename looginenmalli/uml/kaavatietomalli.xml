@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3" timestamp="2022-04-14 12:29:13">
+<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3" timestamp="2022-04-26 14:38:28">
 	<XMI.header>
 		<XMI.documentation>
 			<XMI.exporter>Enterprise Architect</XMI.exporter>
@@ -21,7 +21,7 @@
 						<UML:TaggedValue tag="modified" value="2022-04-14 09:26:52"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="Z:\kaavatietomalli-1\looginenmalli\uml\kaavatietomalli.xml"/>
-						<UML:TaggedValue tag="lastsavedate" value="2022-04-14 12:29:13"/>
+						<UML:TaggedValue tag="lastsavedate" value="2022-04-26 14:38:28"/>
 						<UML:TaggedValue tag="version" value="1.1.1"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
 						<UML:TaggedValue tag="usedtd" value="FALSE"/>
@@ -2397,11 +2397,11 @@
 										<UML:Expression/>
 									</UML:Attribute.initialValue>
 									<UML:StructuralFeature.type>
-										<UML:Classifier xmi.idref="EAID_DFC4D1CC_7484_47b3_9D6F_008BE7CD78FD"/>
+										<UML:Classifier xmi.idref="EAID_0A614EA9_13B7_4ebe_85ED_AA187D27CBD1"/>
 									</UML:StructuralFeature.type>
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="description" value="Kaavatunnuksen arvo on sama kuin Kaava-luokan identiteettitunnuksen arvo"/>
-										<UML:TaggedValue tag="type" value="URI"/>
+										<UML:TaggedValue tag="type" value="CharacterString"/>
 										<UML:TaggedValue tag="containment" value="Not Specified"/>
 										<UML:TaggedValue tag="ordered" value="0"/>
 										<UML:TaggedValue tag="static" value="0"/>
@@ -2664,99 +2664,6 @@
 								</UML:AssociationEnd>
 							</UML:Association.connection>
 						</UML:Association>
-						<UML:Class name="AbstraktiSuurearvo" xmi.id="EAID_63000473_8A9C_4ed5_84C0_44FCEF49DCDF" visibility="public" namespace="EAPK_FCB0EA38_A78E_42b8_BE04_2E5B89486FF7" isRoot="false" isLeaf="false" isAbstract="true" isActive="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="DataType"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="Class"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="package" value="EAPK_FCB0EA38_A78E_42b8_BE04_2E5B89486FF7"/>
-								<UML:TaggedValue tag="date_created" value="2020-11-05 10:52:24"/>
-								<UML:TaggedValue tag="date_modified" value="2020-11-05 10:52:24"/>
-								<UML:TaggedValue tag="gentype" value="Java"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Kaavatiedot"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="ior"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="product_name" value="Java"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="stereotype" value="DataType"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="79801"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={711A4DD1-5F65-4dde-8AB9-A1A8D07A445F}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DataType;FQName=GML::DataType;@ENDSTEREO;$DES;$CLT={63000473-8A9C-4ed5-84C0-44FCEF49DCDF}$CLT;$ENDXREF;"/>
-							</UML:ModelElement.taggedValue>
-							<UML:Classifier.feature>
-								<UML:Attribute name="suure" changeable="none" visibility="public" ownerScope="instance" targetScope="instance">
-									<UML:Attribute.initialValue>
-										<UML:Expression/>
-									</UML:Attribute.initialValue>
-									<UML:StructuralFeature.type>
-										<UML:Classifier xmi.idref="EAID_AD0B3552_C96D_4d29_A260_592E7B8E1F63"/>
-									</UML:StructuralFeature.type>
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Koodiarvo"/>
-										<UML:TaggedValue tag="derived" value="0"/>
-										<UML:TaggedValue tag="containment" value="Not Specified"/>
-										<UML:TaggedValue tag="length" value="0"/>
-										<UML:TaggedValue tag="ordered" value="0"/>
-										<UML:TaggedValue tag="precision" value="0"/>
-										<UML:TaggedValue tag="scale" value="0"/>
-										<UML:TaggedValue tag="static" value="0"/>
-										<UML:TaggedValue tag="collection" value="false"/>
-										<UML:TaggedValue tag="position" value="0"/>
-										<UML:TaggedValue tag="lowerBound" value="0"/>
-										<UML:TaggedValue tag="upperBound" value="1"/>
-										<UML:TaggedValue tag="duplicates" value="0"/>
-										<UML:TaggedValue tag="ea_guid" value="{85337E03-E42B-4e0e-A639-3462E09AFA11}"/>
-										<UML:TaggedValue tag="ea_localid" value="113671"/>
-										<UML:TaggedValue tag="styleex" value="volatile=0;"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Attribute>
-							</UML:Classifier.feature>
-						</UML:Class>
-						<UML:Generalization subtype="EAID_63000473_8A9C_4ed5_84C0_44FCEF49DCDF" supertype="EAID_AC67A092_A817_4b0e_A74D_5FFBF04F9D3B" xmi.id="EAID_DFAFA3D0_F608_4f50_8A3C_49489A75BBE0" visibility="public">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Generalization"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="125502"/>
-								<UML:TaggedValue tag="ea_sourceName" value="AbstraktiSuurearvo"/>
-								<UML:TaggedValue tag="ea_targetName" value="AbstraktiArvo"/>
-								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
-								<UML:TaggedValue tag="ea_targetType" value="Class"/>
-								<UML:TaggedValue tag="ea_sourceID" value="79801"/>
-								<UML:TaggedValue tag="ea_targetID" value="79800"/>
-								<UML:TaggedValue tag="src_visibility" value="Public"/>
-								<UML:TaggedValue tag="src_aggregation" value="0"/>
-								<UML:TaggedValue tag="src_isOrdered" value="false"/>
-								<UML:TaggedValue tag="src_targetScope" value="instance"/>
-								<UML:TaggedValue tag="src_changeable" value="none"/>
-								<UML:TaggedValue tag="src_isNavigable" value="false"/>
-								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;"/>
-								<UML:TaggedValue tag="dst_visibility" value="Public"/>
-								<UML:TaggedValue tag="dst_aggregation" value="0"/>
-								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
-								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
-								<UML:TaggedValue tag="dst_changeable" value="none"/>
-								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
-								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-							</UML:ModelElement.taggedValue>
-						</UML:Generalization>
 						<UML:Class name="Tunnusarvo" xmi.id="EAID_63401770_AC18_4572_9B87_207186F687D5" visibility="public" namespace="EAPK_FCB0EA38_A78E_42b8_BE04_2E5B89486FF7" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
 							<UML:ModelElement.stereotype>
 								<UML:Stereotype name="DataType"/>
@@ -4182,7 +4089,6 @@
 								<UML:TaggedValue tag="tpos" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="79804"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="$ea_attsclassified" value="{85337E03-E42B-4e0e-A639-3462E09AFA11}"/>
 								<UML:TaggedValue tag="$ea_classified" value="{6812A258-D3EB-4f3e-BED5-52464FF92F22},{AE6283CF-08FB-4137-A576-DD4FCF0AFB43},{072107A1-1439-4d60-882F-2529D902880B}"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={81332D5F-876C-4ac9-86A3-9353DF89EB6F}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DataType;FQName=GML::DataType;@ENDSTEREO;$DES;$CLT={AD0B3552-C96D-4d29-A260-592E7B8E1F63}$CLT;$ENDXREF;"/>
@@ -4705,7 +4611,7 @@
 								<UML:TaggedValue tag="tpos" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="79699"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="$ea_attsclassified" value="{3CE489A6-2B19-4c39-A727-4C0CFEE3A381},{C525DF8E-8F88-47aa-9C1E-3561C83C4A35}"/>
+								<UML:TaggedValue tag="$ea_attsclassified" value="{C525DF8E-8F88-47aa-9C1E-3561C83C4A35},{3CE489A6-2B19-4c39-A727-4C0CFEE3A381}"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={708D6B3E-8EC4-4c70-AF82-37C31FAFBD72}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=CodeList;FQName=GML::CodeList;@ENDSTEREO;$DES;$CLT={E6A003F9-4648-4879-BA58-FCFD63ED9431}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
@@ -4927,8 +4833,6 @@
 		<UML:TaggedValue tag="byValuePropertyType" xmi.id="EAID_ED33D65F_DF35_1ddf_A80F_2AE43D4C27AF" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Create a named complex type ( property type ) that requires the instance to be encoded inline&#xA;" modelElement="EAID_6192D7E3_8615_4969_AEFD_312C2DB53892"/>
 		<UML:TaggedValue tag="isCollection" xmi.id="EAID_26B33348_211E_5f21_B9F0_A5528ABAB2B8" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Identifies the class as a collection&#xA;" modelElement="EAID_6192D7E3_8615_4969_AEFD_312C2DB53892"/>
 		<UML:TaggedValue tag="noPropertyType" xmi.id="EAID_F9638764_B69A_b0b6_885D_F84BBA2339D2" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding&#xA;" modelElement="EAID_6192D7E3_8615_4969_AEFD_312C2DB53892"/>
-		<UML:TaggedValue tag="isCollection" xmi.id="EAID_26B33348_88EC_9d88_A6B3_9042F04C32C7" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Identifies the class as a collection&#xA;" modelElement="EAID_63000473_8A9C_4ed5_84C0_44FCEF49DCDF"/>
-		<UML:TaggedValue tag="noPropertyType" xmi.id="EAID_F9638764_49E8_2849_B86C_3314F9E4A0E5" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding&#xA;" modelElement="EAID_63000473_8A9C_4ed5_84C0_44FCEF49DCDF"/>
 		<UML:TaggedValue tag="isCollection" xmi.id="EAID_26B33348_88EC_9d88_BCEF_CE3059507881" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Identifies the class as a collection&#xA;" modelElement="EAID_63401770_AC18_4572_9B87_207186F687D5"/>
 		<UML:TaggedValue tag="noPropertyType" xmi.id="EAID_F9638764_49E8_2849_A9CD_35C5BCE9A72A" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding&#xA;" modelElement="EAID_63401770_AC18_4572_9B87_207186F687D5"/>
 		<UML:TaggedValue tag="asDictionary" xmi.id="EAID_0BE3FA2A_1A09_4e1a_8E8D_3134860EA29A" value="true#NOTES#Values: true,false&#xA;Default: false&#xA;Description: If 'false', the class will be mapped to an XSDsimpleType. Else, it will be exported as an external dictionary.&#xA;" modelElement="EAID_667B15A9_6881_4588_B5CD_7E65E8D16DFD"/>

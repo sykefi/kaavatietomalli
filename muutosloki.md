@@ -22,7 +22,13 @@ Lisätty XML-skeeman generointiin liittyviä annotaatioita UML-malliin.
 * Korjattu kaikkien CodeList-stereotyyppisten koodistoluokkien tagi asDictionary arvosta false arvoon true. Näin koodistoviittaukset generoituvat gml:ReferenceType-tyyppisiksi, ei enumeraatioksi.
 * Korjattu Esimerkit/Rakentamisen määrä -paketin instanssikaaviossa Rakentamisen määrä - käyttötarkoituksittain jaettu kerrosala Lisätiedot-olioiden käyttötarkoitusmääräyksiin virheellisesti osoittaneet arvot osoittamaan Koodiarvo-oliohin, jotka puolestaan osoittavat määräyksiä vastaaviin koodeihin.
 * Poistettu epähuomiossa jäänyt, käyttämätön Suunnittelukohde-luokka ja vaihdettu se Kaavakohde-luokkaan esimerkki-paketin Rakentamisen määrä - käyttötarkoituksittain -instanssikaaviossa.
+* Poistettu epähuomiossa jäänyt Tapahtumahistoria-luokka ja siihen viittaava assosiaatio ```AbstraktiVersioituKohde::historia```.
 * Lisätty puuttunut tyyppi (URI) attribuutille MKP-ydin::Asiakirja.lisatietolinkki
+* Korjattu AbstraktiTapahtuma.lisatietolinkki-attribuutin tyyppi URL -> URI.
+* Korjattu elinkaarisääntöjen viittaustunnus-attribuutin syntymisvaatimuksen tunnus ```elinkaari/vaat-nimiavaruus-gen``` -> ```elinkaari/vaat-viittaustunnus-gen```.
+* Poistettu epähuomiossa jäänyt, käyttämätön AbstraktiSuurearvo-luokka.
+* Korjattu Kaava.kaavaTunnus-attribuutin tyyppi URI -> CharacterString.
+* Korjattu typo elikaarisääntöjen viittaustunnusta koskevassa vaatimuksessa, puhuttiin epähuomiossa paikallisesta tunnuksesta, kun piti puhua viittaustunnuksesta (Vaatimus elinkaari/vaat-viittaustunnus-maar)
 
 
 ## Muutokset versiosta 1.0 versioon 1.1
