@@ -13,5 +13,4 @@ tocTab[tocTab.length] = new Array("0.3:12", "", "«FeatureType» Lahtotietoainei
 tocTab[tocTab.length] = new Array("0.3:13", "", "«CodeList» LahtotietoaineistonLaji", "EARoot/EA3/EA101.html", "5.png", "E79672", "0", "", "Class0","{B23638F5-4A97-4a47-9815-27D3D310799E}");
 tocTab[tocTab.length] = new Array("0.3:14", "", "«CodeList» OikeusvaikutteisuudenLaji", "EARoot/EA3/EA102.html", "5.png", "E79708", "0", "", "Class0","{9A0421F4-A80C-4dc9-A51E-0CD1E022F893}");
 tocTab[tocTab.length] = new Array("0.3:15", "", "Organisaatio", "EARoot/EA3/EA103.html", "8.png", "E79797", "0", "", "Interface0","{B3D292CB-1FA2-43bb-A196-49BEFF88D793}");
-tocTab[tocTab.length] = new Array("0.3:16", "", "«FeatureType» Tapahtumahistoria", "EARoot/EA3/EA104.html", "5.png", "E79662", "0", "", "Class0","{F9E9F8F4-CF2A-47c4-8A71-46930B8181C2}");
-tocTab[tocTab.length] = new Array("0.3:17", "", "«FeatureType» Vuorovaikutustapahtuma", "EARoot/EA3/EA105.html", "5.png", "E79666", "0", "", "Class0","{43EC363E-FA14-4fcb-9BB2-D15343BC445A}");
+tocTab[tocTab.length] = new Array("0.3:16", "", "«FeatureType» Vuorovaikutustapahtuma", "EARoot/EA3/EA104.html", "5.png", "E79666", "0", "", "Class0","{43EC363E-FA14-4fcb-9BB2-D15343BC445A}");
