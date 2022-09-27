@@ -106,7 +106,18 @@ Geometriakokoelmat toteuttavat ISO 19107 -standardin määrittelemän ```Collect
 
 #### Sallitut koordinaatistot ja koordinaattijärjestys
 
-{% include common/question.html content="Miten sallitut koordinaatistot rajataan? Ainakin ETRS-TM35FIN (EPSG:3067) ja N2000 (EPSG:3900), mutta miten tehdään muiden kunnissa käytössä olevien koordinaatistojen suhteen?" %}
+Rakennetun ympäristön tietojärjestelmä tukee seuraavia koordinaatistoja:
+
+Tiedon luovutuksen koordinaatistot
+* EPSG:4326, WGS84
+  * Käytössä myös IFC-mallissa 
+* EPSG:3857, Google Web Mercator
+* Tiedon luovutusrajapinnan käyttäjä voi pyytää vastauksen haluamassaan tuetussa koordinaatistossa, jolloin tietojärjestelmä muuntaa tarvittaessa varannossa olevan tiedon haluttuun kohdekoordinaatistoon.
+
+Tiedon luovutuksen ja vastaanoton koordinaatistot
+* EPSG:3067, valtakunnallinen koordinaatisto.
+* EPSG:3873-3885 koordinaatistot tiedon luovutuksessa / tiedon vastaanotossa
+* Tiedon toimituksen yhteydessä tulee tallentaa tieto koordinaattijärjestelmästä ja korkeusjärjestelmästä (N2000), jossa tieto toimitettu.
 
 {% include common/clause_start.html type="req" id="laatu/vaat-koord-jarjestys" %}
 Geometrioiden ilmaisemisessa tulee noudattaa kunkin koordinaatiston määritelmässä annettua virallista koordinaattijärjestystä.
