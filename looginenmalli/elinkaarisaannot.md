@@ -390,6 +390,8 @@ Kaavan ```elinkaaritila```-attribuutin arvo voi kahden sen peräkkäisen tallenn
 * Tilasta ```Hylätty``` ei sallittuja siirtymiä.
 {% include common/clause_end.html %}
 
+{% include common/question.html content="Onko kaava heti lainvoimainen (ja siis sen voimassaoloaika alkanut), kun se on päätetty määrätä osittain voimaan? Vai seuraako osittain voimaan määräämispäätöksestä vielä valitusaika, jonka jälkeen kaava tulee vielä erikseen kuuluttaa lainvoimaiseksi? Jos erillinen lainvoimaiseksi kuuluttaminen on tarpeen, tulee sallia myös tilamuutos ```Osittain voimassa -> Voimassa```" %}
+
 Kaava ei ole lainvoimainen kun siitä on valitettu. Valitustilanteessa MRL 201 §:n mukaan kunnanhallitus voi valitusajan kuluttua määrätä yleis- ja asemakaavan tulemaan voimaan ennen kuin se on saanut lainvoiman kaava-alueen siltä osalta, johon valitusten tai oikaisukehotuksen ei voida katsoa kohdistuvan.  Kaava ei siis ole lainvoimainen kun kunta on määrännyt kaavan osittain voimaan. Kaava on lainvoimainen vasta kun oikeus on käsitellyt tulleet valitukset ja antanut päätöksensä ja tämä päätös on lainvoimainen.
 
 Elinkaarisääntöjä päivitetään vuoden 2022 aikana.
