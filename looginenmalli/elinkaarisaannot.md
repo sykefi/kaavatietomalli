@@ -175,10 +175,12 @@ Tuottava tietojärjestelmän vastaa kaavatunnuksen asettamisesta [Kaava](dokumen
 Kaavatunnus on Kaava-luokan objekteille globaalisti yksilöivä, eikä muutu saman kaavan eri elinkaaren aikaisten versioiden tallennuksen yhteydessä.
 {% include common/clause_end.html %}
 
- Käytännössä myönnetyt kaavatunnukset kannattaa tallentaa valmiiksi kaavatietovarastoon, jotta voidaan tarkistaa onko tallennettavaksi tarkoitettu kaavatunnus myönnetty organisaatiolle, jonka kaavaa ollaan tallentamassa. Kuntakoodin tai muun hallinnollisen alueen tunnuksen käyttö osana kaavatunnusta ei ole suositeltavaa, sillä hallinnolliset alueet muuttuvat ajan kuluessa. Kun sidos tunnuksen ja hallinnollisen alueen välillä ei näy tunnuksessa, voidaan kaavan hallinnollista aluetta muuttaa joustavammin kaavan elinkaaren aikana.
+{% include common/note.html content="Kaavan kansallisesti yksilöivän kaavaTunnuksen muoto on parhaillaan ratkaistavana, ja sen muoto tarkentuu H1/2023. Tällä hetkellä on nähty, että tunnuksen tulee olla ihmisluettava, jotta sitä voidaan hyödyntää esim. päätösteksteissä. Tunnuksen osakomponenttina saattaa olla esim. kuntatunnus. Vaikka kuntatunnukset muuttuvat hallinnollisten alueiden muutosten myötä, kertovat nämä kaavan laadinnan hetken organisaatiojaosta, ja ovat ”siirrettävissä” tarvittaessa uuden organisaation alle siinä missä esim. koneluettavat UUID-tunnisteet. Vastaavasti käyttäytyvät myös esim. kiinteistötunnukset KTJ:ssä." %}
+
+ Käytännössä myönnetyt kaavatunnukset kannattaa tallentaa valmiiksi kaavatietovarastoon, jotta voidaan tarkistaa onko tallennettavaksi tarkoitettu kaavatunnus myönnetty organisaatiolle, jonka kaavaa ollaan tallentamassa.
 
 {% include common/clause_start.html type="rec" id="elinkaari/suos-kaavatunnus-form" %}
-Kaavatunnuksen suositeltu muoto on UUID.
+Kaavatunnuksen suositeltu muoto on toistaiseksi UUID.
 {% include common/clause_end.html %}
 
 Esimerkki: ```df5b2d6f-d6d6-4695-938c-dd7c4c784c28```
