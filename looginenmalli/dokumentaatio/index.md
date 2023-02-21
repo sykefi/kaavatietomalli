@@ -90,7 +90,7 @@ Kaavatietomallin UML-luokkakaaviot ovat saatavilla erillisellä [UML-kaaviot](..
 
 ## MKP-ydin
 
-### AbstraktiVersioituObjekti
+### VersioituObjekti
 Englanninkielinen nimi: **AbstractVersionedObject**
 
 Stereotyyppi: FeatureType (kohdetyyppi)
@@ -113,13 +113,13 @@ tallennusAika    | storageTime        | [TM_Instant](#tm_instant)          | 0..
 
 Roolinimi        | Role name          | Kohde               | Kardinaliteetti | Kuvaus
 -----------------|--------------------|---------------------|-----------------|------------------------------------
-korvaaObjektin   | replacesObject     | [AbstraktiVersioituObjekti](#abstraktiversioituobjekti) | 0..* | kohteen versio, jonka tämä versio korvaa. Voi olla saman kohteen edellinen versio tai poistuva kohde, jonka tämä kohde korvaa. Oltava saman luokan instanssi.
-korvattuObjektilla | replacedByObject | [AbstraktiVersioituObjekti](#abstraktiversioituobjekti) | 0..* | kohteen versio, jolla tämä versio on korvattu. Voi olla saman kohteen seuraava versio tai uusi kohde, jolla tämä kohde on korvattu. Oltava saman luokan instanssi.
+korvaaObjektin   | replacesObject     | [VersioituObjekti](#versioituobjekti) | 0..* | kohteen versio, jonka tämä versio korvaa. Voi olla saman kohteen edellinen versio tai poistuva kohde, jonka tämä kohde korvaa. Oltava saman luokan instanssi.
+korvattuObjektilla | replacedByObject | [VersioituObjekti](#versioituobjekti) | 0..* | kohteen versio, jolla tämä versio on korvattu. Voi olla saman kohteen seuraava versio tai uusi kohde, jolla tämä kohde on korvattu. Oltava saman luokan instanssi.
 
-### AbstraktiMaankayttoasia
-Englanninkielinen nimi: **AbstractLandUseMatter**
+### AlueidenkäyttöJaRakentamisasia
+Englanninkielinen nimi: **LandUseAndBuildingMatter**
 
-Erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -139,13 +139,13 @@ Roolinimi        | Role name          | Kohde               | Kardinaliteetti | 
 koskeeHallinnollistaAluetta | appliesToAdministrativeArea | [HallinnollinenAlue](#hallinnollinenalue) | 0..* | hallinnollinen alue, jota asia koskee
 vastuullinenOrganisaatio | responsibleOrganisation | [Organisaatio](#organisaatio) | 0..1 | organisaatio, joka on vastuussa asian käsittelystä
 hyodynnettyAineisto | usedInputDataset | [Lahtotietoaineisto](#lahtotietoaineisto) | 0..* | lähtötietoaineisto, jota asian valmistelussa ja käsittelyssä on hyödynnetty
-liittyvaAsia     | relatedMatter      | [AbstraktiMaankayttoasia](#abstraktimaankayttoasia) | 0..* | toinen, tähän asiaan liittyä asia. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring),joka kuvaa miten asia liittyy tähän asiaan
+liittyvaAsia     | relatedMatter      | [AlueidenkäyttöJaRakentamisasia](#alueidenkäyttöjarakentamisasia) | 0..* | toinen, tähän asiaan liittyä asia. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring),joka kuvaa miten asia liittyy tähän asiaan
 asianLiite       | attachment         | [Asiakirja](#asiakirja) | 0..*      | asian kuvaamiseen tai käsittelyyn olennaisesti kuuluva liitetty asiakirja. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring),joka kuvaa nimeää liitteen. 
 
 ### Asiakirja
 Englanninkielinen nimi: **Document**
 
-Kuvaa käsitteen [Kaavan liite](../../kasitemalli/#kaavan-liite), erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaavan liite](../../kasitemalli/#kaavan-liite), erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -169,7 +169,7 @@ liittyvaAsiakirja | relatedDocument      | [Asiakirja](#asiakirja) | 0..* | toin
 ### Lahtotietoaineisto
 Englanninkielinen nimi: **InputDataset**
 
-Kuvaa käsitteen [Lahtotietoaineisto](../../kasitemalli/#lahtotietoaineisto), erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Lahtotietoaineisto](../../kasitemalli/#lahtotietoaineisto), erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -185,10 +185,10 @@ metatietokuvaus  | metadata           | [URI](#uri)         | 0..1            | 
 {% include common/note.html content="Lahtotietoaineisto-luokka ei kuvaa aineiston sisältöä, eikä ota kantaa tapaan, jolla sisältö noudetaan kaavatietovarastosta tai muusta tietojärjestelmästä. Nämä tiedot voidaan kuvata lähtötietoaineiston metatietokuvauksessa." %}
 
 
-### AbstraktiTapahtuma
-Englanninkielinen nimi: **AbstractEvent**
+### Tapahtuma
+Englanninkielinen nimi: **Event**
 
-Erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -206,14 +206,14 @@ peruttu          | cancelled          | boolean = false     | 1               | 
 
 Roolinimi        | Role name          | Kohde               | Kardinaliteetti | Kuvaus
 -----------------|--------------------|---------------------|-----------------|------------------------------------
-liittyvaAsia     | relatedMatter      | [AbstraktiMaankayttoasia](#abstraktimaankayttoasia) | 0..* | asia(n versio)t, joihin tapahtuma liittyy.
+liittyvaAsia     | relatedMatter      | [AlueidenkäyttöJaRakentamisasia](#alueidenkäyttöjarakentamisasia) | 0..* | asia(n versio)t, joihin tapahtuma liittyy.
 liittyvaAsiakirja | relatedDocument      | [Asiakirja](#asiakirja) | 0..* | tapahtumaa liittyä asiakirja. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring),joka kuvaa miten asiakirja liittyy tähän tapahtumaan
 
 
 ### Kasittelytapahtuma
 Englanninkielinen nimi: **HandlingEvent**
 
-Kuvaa käsitteen [Käsittelytapahtuma](../../kasitemalli/#käsittelytapahtuma), erikoistaa luokkaa [AbstraktiTapahtuma](#abstraktitapahtuma), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Käsittelytapahtuma](../../kasitemalli/#käsittelytapahtuma), erikoistaa luokkaa [Tapahtuma](#tapahtuma), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -231,7 +231,7 @@ kasittelija      | handler            | [Organisaatio](#organisaatio) | 0..1  | 
 ### Vuorovaikutustapahtuma
 Englanninkielinen nimi: **InteractionEvent**
 
-Kuvaa käsitteen [Vuorovaikutustapahtuma](../../kasitemalli/#vuorovaikutustapahtuma), erikoistaa luokkaa [AbstraktiTapahtuma](#abstraktitapahtuma), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Vuorovaikutustapahtuma](../../kasitemalli/#vuorovaikutustapahtuma), erikoistaa luokkaa [Tapahtuma](#tapahtuma), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -325,7 +325,7 @@ Vuorovaikutustapahtumien lajit kuvataan MKP-ydin -paketissa abstraktina koodisto
 ### Kaava
 Englanninkielinen nimi: **SpatialPlan**
 
-Kuvaa käsitteen [Kaava](../../kasitemalli/#kaava), erikoistaa luokkaa [AbstraktiMaankayttoasia](#abstraktimaankaytoasia), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaava](../../kasitemalli/#kaava), erikoistaa luokkaa [AlueidenkäyttöJaRakentamisasia](#abstraktimaankaytoasia), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -340,7 +340,7 @@ virelletuloAika  | initiationTime     | [TM_Instant](#tm_instant)    | 0..1     
 hyvaksymisAika   | approvalTime       | [TM_Instant](#tm_instant)    | 0..1            | aika, jolloin kaava on tullut virallisesti hyväksytty
 digitaalinenAlkupera | digitalOrigin  | [DigitaalinenAlkupera](#digitaalinenalkupera) | 0..1 | luokittelu alunperin tietomallin mukaan luotuihin ja jälkeenpäin digituihin kaavoihin
 
-[AbstraktiMaankayttoasia](#abstraktimaankayttoasia)-luokasta peritytyvä attribuutti ```aluerajauus``` kuvaa kaavan suunnittelualueen.
+[AlueidenkäyttöJaRakentamisasia](#alueidenkäyttöjarakentamisasia)-luokasta peritytyvä attribuutti ```aluerajauus``` kuvaa kaavan suunnittelualueen.
 
 **Assosiaatiot**
 
@@ -357,7 +357,7 @@ yleissuositus    | generalGuidance    | [Kaavasuositus](#kaavasuositus) | 0..* |
 
 Englanninkielinen nimi: **SpatialPlanCommentary**
 
-Kuvaa käsitteen [Kaavaselostus](../../kasitemalli/#kaavaselostus), erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaavaselostus](../../kasitemalli/#kaavaselostus), erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 Kaavaselostus on on Kaavatietomallin tässä versiossa kuvattu vain viittauksena kaavaselostuksen muodostaviin asiakirjoihin. Tulevissa tietomallin kehitysversiossa kaavaselostusta voidaan rakenteistaa pidemmälle tämän luokan avulla.
 
@@ -372,7 +372,7 @@ asiakirja        | document           | [Asiakirja](#asiakirja) | 0..*        | 
 
 Englanninkielinen nimi: **ParticipationAndEvalutionPlan**
 
-Kuvaa käsitteen [Osallistumis- ja arviointisuunnitelma](../../kasitemalli/#osallistumis--ja-arviointisuunnitelma), erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Osallistumis- ja arviointisuunnitelma](../../kasitemalli/#osallistumis--ja-arviointisuunnitelma), erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 Osallistumis- ja arviointisuunnitelma on on Kaavatietomallin tässä versiossa kuvattu vain viittauksena suunnitelman muodostaviin asiakirjoihin. Tulevissa tietomallin kehitysversiossa osallistumis- ja arviointisuunnitelmaa voidaan rakenteistaa pidemmälle tämän luokan avulla.
 
@@ -387,7 +387,7 @@ asiakirja        | document           | [Asiakirja](#asiakirja) | 0..*        | 
 
 Englanninkielinen nimi: **Planner**
 
-Kuvaa käsitteen [Kaavan laatija](../../kasitemalli/#kaavan-laatija), erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaavan laatija](../../kasitemalli/#kaavan-laatija), erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
@@ -398,11 +398,11 @@ nimike           | professionalTitle  | [LanguageString](#languagestring) | 0..*
 rooli            | role               | [LanguageString](#languagestring) | 0..*       | suunnittelijan rooli kaavan laadinnassa 
 
 
-### AbstraktiKaavakohde
+### RakennetunYmpäristönKohde
 
-Englanninkielinen nimi: **AbstractPlanObject**
+Englanninkielinen nimi: **PlanObject**
 
-Erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 Kaikkien kaavaan liittyvien paikkatietokohteiden yhteinen abstrakti yläluokka. Kohteen geometria voi olla 2-ulotteinen piste, viiva tai alue, tai 3-ulotteinen kappale. Moniosaiset geometriat (multigeometry) ovat sallittuja. Haluttaessa korkeusulottuvuus voidaan ilmaista 2-ulotteisen ```geometria```-attribuutin arvo ja ```pystysuuntainenRajaus```-attribuutin kuvaamien korkeusvälien avulla, myös useampana erillisenä kerroksena. Tällöin kohteen ulottuvuus vastaa 3-ulotteista avaruusgeometriaa, joka muodostuu työntämällä 2-ulotteista pintaa ylös- ja/tai alaspäin annatun korkeusvälin rajoihin saakka. Huomaa, että [Korkeusvali](#korkeusvali)-luokan ylä- tai alaraja (korkeuden maksimi- tai minimiarvo) voi myös puuttua, jolloin kohde kattaa alueen ylöspäin tai alaspäin annetusta korkeudesta.  
 
@@ -419,13 +419,13 @@ pystysuuntainenRajaus | verticalLimit | [Korkeusvali](#korkeusvali)  | 0..*     
 Roolinimi        | Role name          | Kohde               | Kardinaliteetti | Kuvaus
 -----------------|--------------------|---------------------|-----------------|------------------------------------
 kaava            | spatialPlan        | [Kaava](#kaava)     | 1               | kaava, johon kohde kuuluu
-liittyvaKohde    | relatedPlanObject  | [AbstraktiKaavakohde](#abstraktikaavakohde) | 0..* | kohde, joka liittyy tähän kohteeseen. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring), joka kuvaa miten kohde liittyy tähän kohteeseen.
+liittyvaKohde    | relatedPlanObject  | [RakennetunYmpäristönKohde](#rakennetunympäristönkohde) | 0..* | kohde, joka liittyy tähän kohteeseen. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring), joka kuvaa miten kohde liittyy tähän kohteeseen.
 
 ### Tietoyksikko
 
 Englanninkielinen nimi: **InformationUnit**
 
-Erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
+Erikoistaa luokkaa [VersioituObjekti](#versioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
 Kaikkien kaavaan liittyvien tietoelementtien yhteinen abstrakti yläluokka.
 
@@ -440,13 +440,13 @@ arvo             | value              | [AbstraktiArvo](#abstraktiarvo) | 0..*  
 ### Kaavakohde
 Englanninkielinen nimi: **PlanObject**
 
-Kuvaa käsitteen [Kaavakohde](../../kasitemalli/#kaavakohde), erikoistaa luokkaa [AbstraktiKaavakohde](#abstraktikaavakohde), stereotyyppi: FeatureType (kohdetyyppi)
+Kuvaa käsitteen [Kaavakohde](../../kasitemalli/#kaavakohde), erikoistaa luokkaa [RakennetunYmpäristönKohde](#rakennetunympäristönkohde), stereotyyppi: FeatureType (kohdetyyppi)
 
 **Ominaisuudet**
 
 Nimi             | Name               | Tyyppi                       | Kardinaliteetti | Kuvaus
 -----------------|--------------------|------------------------------|-----------------|------------------------------------
-laji             | type               | [AbstraktiKaavakohdelaji](#abstraktikaavakohdelaji) | 0..1 | varattu tulevaisuuden käyttöön
+laji             | type               | [RakennetunYmpäristönKohdelaji](#rakennetunympäristönkohdelaji) | 0..1 | varattu tulevaisuuden käyttöön
 sijainninSitovuus | bindingnessOflocation | [Sitovuuslaji](#sitovuuslaji) | 0..1       | kaavakohteeseen liitettyjen kaavamääräysten ja -suositusten sijainnin tulkinta
 liittyvanLahtotietokohteenTunnus | relatedInputDatasetObjectId | [URI](#uri) | 0..*    | viittaus kaavan lähtötietoaineistoon sisältyvään tietokohteeseen, joka liittyy kaavakohteeseen. Esim. pohjavesialue
 ymparistomuutoksenLaji | environmentalChangeNature | [AbstraktiYmparistomuutoksenLaji](#abstraktiymparistomuutoksenlaji) | 0..1 | kuvaa kaavakohteen alueelle kaavassa suunnitellun muutoksen merkittävyyttä
@@ -728,15 +728,6 @@ Stereotyyppi: CodeList (koodisto)
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
 {% include common/codelistref.html registry="rytj" id="RY_DigitaalinenAlkupera" name="Kaavan digitaalinen alkuperä" %}
-
-#### AbstraktiKaavakohdelaji
-Englanninkielinen nimi: **AbstractPlanObjectKind**
-
-Stereotyyppi: CodeList (koodisto)
-
-Laajennettavuus: [Tyhjä koodiluettelo](http://inspire.ec.europa.eu/registry/extensibility/any)
-
-Ei määriteltyjä arvoja. Varattu tulevaisuuden kaavakohteiden tyypitykseen.
 
 #### AbstraktiYmparistomuutoksenLaji
 Englanninkielinen nimi: **AbstractEnvironmentalChangeKind**
