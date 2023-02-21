@@ -421,9 +421,9 @@ Roolinimi        | Role name          | Kohde               | Kardinaliteetti | 
 kaava            | spatialPlan        | [Kaava](#kaava)     | 1               | kaava, johon kohde kuuluu
 liittyvaKohde    | relatedPlanObject  | [AbstraktiKaavakohde](#abstraktikaavakohde) | 0..* | kohde, joka liittyy tähän kohteeseen. Kukin assosiaatio voi sisältää ```rooli```-määreen tyyppiä [LanguageString](#languagestring), joka kuvaa miten kohde liittyy tähän kohteeseen.
 
-### AbstraktiTietoyksikko
+### Tietoyksikko
 
-Englanninkielinen nimi: **AbstractInformationUnit**
+Englanninkielinen nimi: **InformationUnit**
 
 Erikoistaa luokkaa [AbstraktiVersioituObjekti](#abstraktiversioituobjekti), stereotyyppi: FeatureType (kohdetyyppi)
 
