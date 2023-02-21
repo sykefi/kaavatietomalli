@@ -241,7 +241,7 @@ Linkit kaava-objektista alaspäin mahdollistavat myös kaavaan liittyvien kaavak
 
 **Esimerkki**:
 
-Tallennuspalveluun viedään kaavaehdotus, jonka yhteen kaavakohteeseen liittyvää kaavamääräystä [Lisärakennusoikeus](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/0309) on muutettu siten, että sen numeerinen arvo muuttuu arvosta ```1000 k-m2``` arvoon ```1500 k-m2```. Kaikki kaavan muut tietokohteet ovat identtisiä kaavan edellisen tallennusversion kanssa.
+Tallennuspalveluun viedään kaavaehdotus, jonka yhteen kaavakohteeseen liittyvää kaavamääräystä [Lisärakennusoikeus](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/0309) on muutettu siten, että sen numeerinen arvo muuttuu arvosta ```1000``` arvoon ```1500``` (k-m2). Kaikki kaavan muut tietokohteet ovat identtisiä kaavan edellisen tallennusversion kanssa.
 
 * Muuttuvasta kaavamääräys-tietokohteesta luodaan uusi versio.
 * Kaavakohteesta, johon muuttunut kaavamääräys kohdistuu, luodaan uusi versio, jossa muuttuu vain linkki, viitaten nyt kaavamääräyksen uuteen versioon.
