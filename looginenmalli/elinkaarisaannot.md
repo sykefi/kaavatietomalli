@@ -90,8 +90,12 @@ Tietokohteiden paikallinen tunnus muuttuu sen jokaisen version tallennuksen yhte
 Paikallinen tunnus koostuu identiteettitunnuksesta ja siihen erotinmerkillä liitetystä versiokohtaisesta, esimerkiksi tarkkaan tallennusajanhetkeen perustuvasta merkkijonosta.
 {% include common/clause_end.html %}
 
-{% include common/clause_start.html type="rec" id="elinkaari/suos-paikallinentunnus-merk" %}
-Paikallisen tunnuksen muodostamisessa tulee välttää merkkejä, jotka joudutaan URL-koodaamaan rajapintapalvelujen kutsuissa. Paikkatietokohteen paikallista tunnusta käytetään fyysisten tietomallien pääavaimena, esim. GeoJSON Feature ```id```-omaisuuden ja GML:n ```gml:id```-attribuutin arvona, ja siten esimerkiksi OGC Web Feature Service (WFS) - ja OGC API - Features -rajapintapalvelujen paikkatietokohteen yksilöivissä kyselyissä.
+{% include common/clause_start.html type="req" id="elinkaari/vaat-paikallinentunnus-merk" %}
+Paikallisen tunnuksen muodostamisessa ei tule käyttää merkkejä, jotka joudutaan URL-koodaamaan rajapintapalvelujen kutsuissa.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="rec" id="elinkaari/suos-paikallinentunnus-primary" %}
+Paikkatietokohteen paikallista tunnusta käytetään fyysisten tietomallien pääavaimena, esim. GeoJSON Feature ```id```-omaisuuden ja GML:n ```gml:id```-attribuutin arvona, ja siten esimerkiksi OGC Web Feature Service (WFS) - ja OGC API - Features -rajapintapalvelujen paikkatietokohteen yksilöivissä kyselyissä.
 {% include common/clause_end.html %}
 
 Tallennusajanhetkeen päättyvää paikallista tunnusta voidaan käyttää ilman sekaannusmahdollisuuksia samalla logiikalla myös paikallisissa versioinneissa, eli sellaisissa kaavan versioiden tallennuksissa, joita ei viedä lainkaan kaavatietovarastoon.
