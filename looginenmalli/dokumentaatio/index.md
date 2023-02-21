@@ -449,7 +449,6 @@ Nimi             | Name               | Tyyppi                       | Kardinali
 laji             | type               | [RakennetunYmpäristönKohdelaji](#rakennetunympäristönkohdelaji) | 0..1 | varattu tulevaisuuden käyttöön
 sijainninSitovuus | bindingnessOflocation | [Sitovuuslaji](#sitovuuslaji) | 0..1       | kaavakohteeseen liitettyjen kaavamääräysten ja -suositusten sijainnin tulkinta
 liittyvanLahtotietokohteenTunnus | relatedInputDatasetObjectId | [URI](#uri) | 0..*    | viittaus kaavan lähtötietoaineistoon sisältyvään tietokohteeseen, joka liittyy kaavakohteeseen. Esim. pohjavesialue
-ymparistomuutoksenLaji | environmentalChangeNature | [AbstraktiYmparistomuutoksenLaji](#abstraktiymparistomuutoksenlaji) | 0..1 | kuvaa kaavakohteen alueelle kaavassa suunnitellun muutoksen merkittävyyttä
 maanalaisuus     | groundRelativePosition | [MaanalaisuudenLaji](#maanalaisuudenlaji) | 0..1 | luokittelu maanalaista ja maanpäällistä maankäyttöä koskeviin kaavakohteisiin
 
 **Assosiaatiot**
