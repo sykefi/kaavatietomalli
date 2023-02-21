@@ -434,7 +434,7 @@ Kaikkien kaavaan liittyvien tietoelementtien yhteinen abstrakti yläluokka.
 Nimi             | Name               | Tyyppi                       | Kardinaliteetti | Kuvaus
 -----------------|--------------------|------------------------------|-----------------|------------------------------------
 nimi             | name               | [LanguageString](#languagestring) | 0..*       | tietoyksikön tunnistamiseen käytettävä nimi. Huom: kaavan oikeusvaikutteiset nimeämiset (mm. katujen, teiden ja yleisten alueiden nimet ja korttelinumerot) kuvataan kaavamääräysten arvojen avulla.
-arvo             | value              | [AbstraktiArvo](#abstraktiarvo) | 0..*         | tietoyksikön arvo
+arvo             | value              | [OminaisuudenArvo](#ominaisuudenarvo) | 0..*         | tietoyksikön arvo
 
 
 ### Kaavakohde
@@ -513,7 +513,7 @@ Nimi             | Name               | Tyyppi                       | Kardinali
 -----------------|--------------------|------------------------------|-----------------|------------------------------------
 laji             | type               | [AbstraktiLisatiedonLaji](#abstraktilisatiedonlaji) | 1 | lisätiedon luokittelu
 nimi             | name               | [LanguageString](#languagestring) | 0..*       | lisätiedon tunnistamiseen käytettävä nimi. Huom: kaavan oikeusvaikutteiset nimeämiset (mm. katujen, teiden ja yleisten alueiden nimet ja korttelinumerot) kuvataan kaavamääräysten arvojen avulla.
-arvo             | value              | [AbstraktiArvo](#abstraktiarvo) | 0..*         | lisätiedon lajia tarkentava arvo
+arvo             | value              | [OminaisuudenArvo](#ominaisuudenarvo) | 0..*         | lisätiedon lajia tarkentava arvo
 
 
 ### KaavanKumoamistieto
@@ -533,8 +533,8 @@ kumottavaKaavanAlue | areaToCancel    | [Geometry](#geometry)        | 0..1     
 kumottavanMaarayksenTunnus | cancelledRegulationId | [URI](#uri)     | 0..*            | kaavamääräyksen ```viittausTunnus```, jota kumoaminen koskee
 kumottavanSuosituksenTunnus | cancelledGuidanceId | [URI](#uri)      | 0..*            | kaavasuosituksen ```viittausTunnus```, jota kumoaminen koskee
 
-### AbstraktiArvo
-Englanninkielinen nimi: **AbstractValue**
+### OminaisuudenArvo
+Englanninkielinen nimi: **Value**
 
 Kuvaa käsitteen [Arvo](../../kasitemalli/#arvo), stereotyyppi: DataType (tietotyyppi)
 
@@ -543,7 +543,7 @@ Kuvaa käsitteen [Arvo](../../kasitemalli/#arvo), stereotyyppi: DataType (tietot
 ### Ajanhetkiarvo
 Englanninkielinen nimi: **TimeInstantValue**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Arvo, joka kuvaa yksittäistä ajanhetkeä.
 
@@ -556,7 +556,7 @@ arvo             | value              | [TM_Instant](#tm_instant)    | 1        
 ### Aikavaliarvo
 Englanninkielinen nimi: **TimePeriodValue**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Arvo, joka kuvaa aikaväliä.
 
@@ -570,7 +570,7 @@ arvo             | value              | [TM_Period](#tm_period)      | 1        
 ### GeometriaArvo
 Englanninkielinen nimi: **GeometryValue**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Arvo, joka kuvaa aikaväliä.
 
@@ -584,7 +584,7 @@ arvo             | value              | [Geometry](#geometry)        | 1        
 ### Koodiarvo
 Englanninkielinen nimi: **CodeValue**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Arvo, joka kuvaa tiettyä annetun koodiston koodia.
 
@@ -599,7 +599,7 @@ otsikko          | title              | [LanguageString](#languagestring) | 0..*
 ### NumeerinenArvo
 Englanninkielinen nimi: **NumericValue**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Arvo, joka kuvaa liukulukuna annettua numeroa.
 
@@ -613,7 +613,7 @@ mittayksikko     | unitOfMeasure      | [CharacterString](#characterstring) | 0.
 ### NumeerinenArvovali
 Englanninkielinen nimi: **NumericRange**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Arvo, joka kuvaa liukulukuna annettua numeerista arvoväliä.
 
@@ -628,7 +628,7 @@ mittayksikko     | unitOfMeasure      | [CharacterString](#characterstring) | 0.
 ### Tunnusarvo
 Englanninkielinen nimi: **IdentifierValue**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Kuvaa rekisterissä hallittavan tunnuksen arvona. Kaavamääräyksestä ja lisätiedosta riippuen tunnus annetaan tai siihen viitataan kaavassa. 
 
@@ -643,7 +643,7 @@ rekisterinNimi   | registerName       | [LanguageString](#languagestring) | 0..*
 ### Tekstiarvo
 Englanninkielinen nimi: **TextValue**
 
-Erikoistaa luokkaa [AbstraktiArvo](#abstraktiarvo), stereotyyppi: DataType (tietotyyppi)
+Erikoistaa luokkaa [OminaisuudenArvo](#ominaisuudenarvo), stereotyyppi: DataType (tietotyyppi)
 
 Kuvaa mahdollisesti monella kielellä annettavan tekstimuotoisen arvon.
 
@@ -729,29 +729,12 @@ Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/exte
 
 {% include common/codelistref.html registry="rytj" id="RY_DigitaalinenAlkupera" name="Kaavan digitaalinen alkuperä" %}
 
-#### AbstraktiYmparistomuutoksenLaji
-Englanninkielinen nimi: **AbstractEnvironmentalChangeKind**
-
-Stereotyyppi: CodeList (koodisto)
-
-Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
-
-#### YmparistomuutoksenLajiYleiskaava
-Englanninkielinen nimi: **MasterPlanEnvironmentalChangeKind**
-
-Erikoistaa luokkaa [AbstraktiYmparistomuutoksenLaji](#abstraktiymparistomuutoksenlaji), stereotyyppi: CodeList (koodisto)
-
-Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
-
-{% include common/codelistref.html registry="rytj" id="RY_YmparistomuutoksenLaji_YK" name="Ympäristömuutoksen laji (yleiskaava)" %}
-
 #### AbstraktiKaavoitusteema
 Englanninkielinen nimi: **AbstractSpatialPlanTheme**
 
 Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Laajennettavissa kaikilla tasoilla](http://inspire.ec.europa.eu/registry/extensibility/open)
-
 
 #### KaavoitusteemaAsemakaava
 Englanninkielinen nimi: **DetailPlanTheme**
