@@ -780,56 +780,19 @@ Laajennettavuus: [Laajennettavissa kaikilla tasoilla](http://inspire.ec.europa.e
 
 {% include common/codelistref.html registry="rytj" id="RY_Kaavoitusteema_YK" name="Kaavoitusteema (yleiskaava)" %}
 
-#### AbstraktiKaavamaarayslaji
-Englanninkielinen nimi: **AbstractPlanRegulationKind**
+#### Kaavamaarayslaji
+Englanninkielinen nimi: **PlanRegulationKind**
 
 Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
 
-#### KaavamaarayslajiAsemakaava
-Englanninkielinen nimi: **DetailPlanRegulationKind**
-
-Erikoistaa luokkaa [AbstraktiKaavamaarayslaji](#abstraktikaavamaarayslaji), stereotyyppi: CodeList (koodisto)
-
-Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
-
-{% include common/codelistref.html registry="rytj" id="RY_KaavamaaraysLaji_AK" name="Kaavamääräyslaji (asemakaava)" %}
-
-#### KaavamaarayslajiYleiskaava
-Englanninkielinen nimi: **MasterPlanRegulationKind**
-
-Erikoistaa luokkaa [AbstraktiKaavamaarayslaji](#abstraktikaavamaarayslaji), stereotyyppi: CodeList (koodisto)
-
-Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
-
-{% include common/codelistref.html registry="rytj" id="RY_KaavamaaraysLaji_YK" name="Kaavamääräyslaji (yleiskaava)" %}
-
-
-#### AbstraktiLisatiedonLaji
-Englanninkielinen nimi: **AbstractAdditionInformationKind**
+#### LisatiedonLaji
+Englanninkielinen nimi: **AdditionInformationKind**
 
 Stereotyyppi: CodeList (koodisto)
 
 Laajennettavuus: [Laajennettavissa kaikilla tasoilla](http://inspire.ec.europa.eu/registry/extensibility/open)
-
-#### LisatiedonLajiAsemakaava
-Englanninkielinen nimi: **DetailPlanAdditionInformationKind**
-
-Erikoistaa luokkaa [AbstraktiLisatiedonLaji](#abstraktilisatiedonlaji), stereotyyppi: CodeList (koodisto)
-
-Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
-
-{% include common/codelistref.html registry="rytj" id="RY_LisatiedonLaji_AK" name="Kaavamääräyksen lisätiedon laji (asemakaava)" %}
-
-#### LisatiedonLajiYleiskaava
-Englanninkielinen nimi: **MasterPlanAdditionInformationKind**
-
-Erikoistaa luokkaa [AbstraktiLisatiedonLaji](#abstraktilisatiedonlaji), stereotyyppi: CodeList (koodisto)
-
-Laajennettavuus: [Ei laajennettavissa](http://inspire.ec.europa.eu/registry/extensibility/none)
-
-{% include common/codelistref.html registry="rytj" id="RY_LisatiedonLaji_YK" name="Kaavamääräyksen lisätiedon laji (yleiskaava)" %}
 
 #### KaavanKasittelytapahtumanLaji
 Englanninkielinen nimi: **SpatialPlanHandlingEventKind**
