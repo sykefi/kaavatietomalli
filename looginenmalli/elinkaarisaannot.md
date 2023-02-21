@@ -221,12 +221,6 @@ Kullakin koodiston koodilla on oltava pysyvä tunnus, joka sellaisenaan yksilöi
 Olkoon koodi ```A``` mikä tahansa hierarkkisen koodiston sisältämä koodi. Koodin ```A``` alakoodilla tarkoitetaan koodia, joka on hierarkiassa sijoitettu koodin ```A``` alle. Koodi voi olla useamman ylemmän tason koodin alakoodi vain mikäli ko. ylemmän tason koodit ovat alakoodisuhteessa keskenään.
 {% include common/clause_end.html %}
 
-Käytännössä tietyn koodin alakoodit voidaan tunnistaa vertaamalla niiden tunnuksia:
-
-{% include common/clause_start.html type="req" id="elinkaari/vaat-alakoodi-tunnus" %}
-Koodin ```A``` alakoodin ```B``` tunnus alkaa koodin ```A``` tunnuksella ja sisältää sen jälkeen yhden tai useamman merkin.
-{% include common/clause_end.html %}
-
 ## Muutokset ja tietojen versionti
 {% include common/clause_start.html type="req" id="elinkaari/vaat-pysyva-sisalto" %}
 Kukin kaavan tai sen osien tallennusoperaatio yhteiseen tietovarastoon muodostaa uuden version tallennettavista tietokohteista, mikäli yksittäinen tietokohde on miltään osin muuttunut verrattuna sen edelliseen versioon. Myös muutokset muissa Kaavatietomallin tietokohteissa, joihin tietokohteesta on viittaus, lasketaan tietokohteen muutoksiksi. Tallennetun tietokohteen version sisältö ei voi muuttua tallennuksen jälkeen, pois lukien sen voimassaolon päättymiseen, seuraavaan versioon linkittämiseen ja elinkaaritilaan liittyvät attribuutit, joita kaavatietovarasto itse päivittää tietyissä tilanteissa.
