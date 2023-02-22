@@ -237,14 +237,15 @@ Minkä tahansa kaavamääräyksen tai -suosituksen muuttaminen johtaa siis kaikk
 
 Linkit kaava-objektista alaspäin mahdollistavat myös kaavaan liittyvien kaavakohteiden, kaavamääräysten ja kaavasuositusten poistamisen kaavaluonnoksesta tai ehdotuksesta vain jättämällä ne yksinkertaisesti pois seuraavasta kaavan tallennusversiosta: Mikäli kaava-objektissa ei olisi suoria linkkejä sen sisältämiin kaavakohteisiin, voisi se säilyä tallennuksessa muuttumattomana, vaikka tallennuksesta puuttuisikin yksi tai useampi aiempaa kaava-versioon sisältynyt kaavakohde. Muuttumattomasta kaava-objektista ei tällöin luotaisi uutta versiota, ja siten uudesta versiosta pois jätetytkin kaavakohteet viittaisivat edelleen uusimpaan (muuttumattomaan) kaavan versioon yhdessä muutettujen ja uusien kaavakohteiden kanssa. Vastaavasti kaavamääräysten poistaminen tietystä kaavakohteesta voidaan tehdä yksinkertaisesti jättämällä ne pois kaavan seuraavasta tallennusversiosta.
 
-[Kaava-asia](dokumentaatio/#kaava-asia)-luokan assosiaatio [OsallistumisJaArviointisuunnitelma](dokumentaatio/#osallistumisjaarviointisuunnitelma)-luokkaan on yksisuuntainen. Tallennettu versio osallistumis- ja arviointisuunnitelmasta voi pysyä samana kaavan uuden version tallennuksen yhteydessä, jolloin niistä ei ole tarpeen luoda uusia versiota. Sama osallistumis- ja arviointisuunnitelman versio voi siis liittyä useampaan saman kaavan tallennusversioon.
+[KaavaAsia](dokumentaatio/#kaavaasia)-luokan assosiaatio [OsallistumisJaArviointisuunnitelma](dokumentaatio/#osallistumisjaarviointisuunnitelma)-luokkaan on yksisuuntainen. Tallennettu versio osallistumis- ja arviointisuunnitelmasta voi pysyä samana kaavan uuden version tallennuksen yhteydessä, jolloin niistä ei ole tarpeen luoda uusia versiota. Sama osallistumis- ja arviointisuunnitelman versio voi siis liittyä useampaan saman kaavan tallennusversioon.
 
 **Esimerkki**:
 
 Tallennuspalveluun viedään kaavaehdotus, jonka yhteen kaavakohteeseen liittyvää kaavamääräystä [Lisärakennusoikeus](http://uri.suomi.fi/codelist/rytj/RY_KaavamaaraysLaji_AK/code/0309) on muutettu siten, että sen numeerinen arvo muuttuu arvosta ```1000``` arvoon ```1500``` (k-m2). Kaikki kaavan muut tietokohteet ovat identtisiä kaavan edellisen tallennusversion kanssa.
 
 * Muuttuvasta kaavamääräys-tietokohteesta luodaan uusi versio.
-* Kaavakohteesta, johon muuttunut kaavamääräys kohdistuu, luodaan uusi versio, jossa muuttuu vain linkki, viitaten nyt kaavamääräyksen uuteen versioon.
+* Kaavamääräysryhmästä, johon muuttunut kaavamääräys kohdistuu, luodaan uusi versio, jossa muuttuu vain linkki, viitaten nyt kaavamääräyksen uuteen versioon.
+* Kaavakohteesta, johon muuttunut kaavamääräysryhmä kohdistuu, luodaan uusi versio, jossa muuttuu vain linkki, viitaten nyt kaavamääräyksen uuteen versioon.
 * Kaikista muista kaavan tietokohteista, joista on viittaus kyseiseen kaavakohteeseen, luodaan uudet versiot, joissa muuttuvat vain linkit, viitaten nyt kaavakohteen uuteen versioon, mukaan lukien kaava-objekti ja ko. kaavakohteen kaikki muut kaavamääräykset.
 * Kaikista ko. kaavan muistakin kaavakohteista, kaavamääräyksistä ja kaavasuosituksista luodaan uudet versiot, koska niiden viittaukset muuttuneeseen kaava-tietokohteeseen pitää muuttaa.
 * Kaavan mahdollisesti liittyvistä kaavaselostus- ja osallistumis- ja arviointisuunnitelma -tietokohteista ei luoda uusia versiota, vaan sekä uusi että vanha kaavan versio viittaavat samoihin selostus- ja OAS-tietokohteiden versioihin.
@@ -305,7 +306,7 @@ Tallennettaessa osittain voimaan määrättävä kaava, tulee tuottavassa tietoj
 Kaavamääräysten ja -suositusten kumoaminen kaavan osittaisen voimaan määräyksen yhteydessä saattaa johtaa tilanteeseen, jossa tietyn [Kaavakohde](dokumentaatio/#kaavakohde)-luokan objektin alueelle ei enää kohdistu lainkaan kumoamattomia määräyksiä tai suosituksia. Tästä ei kuitenkaan automaattisesti aiheudu "reikää" kaava-alueeseen, sillä kaavan yleismääräykset voidaan edelleen haluta saattaa voimaan myös ko. kaavakohteen alueella.
 
 {% include common/clause_start.html type="req" id="elinkaari/vaat-osittainen-voimaantulo-aluerajaus" %}
-[Kaava](dokumentaatio/#kaava)-luokan tietokohteen uuden version ```aluerajaus```-attribuuttin arvo päivitetään poistamalla siitä ainoastaan kumottavia kaavamääräyksiä sisältävien kaavakohteiden geometriat vain siinä tapauksessa, että kyseinen osa kaavan alkuperäisestä alueesta halutaan jättää kokonaan kaavan suunnittelualueen ulkopuolelle. Suunnittelualueen ulkopuolelle jätettävälle alueelle ei saa olla kohdistua kumoamattomia kaavamääräyksiä tai -suosituksia.
+[KaavaAsia](dokumentaatio/#kaavaasia)-luokan tietokohteen uuden version ```aluerajaus```-attribuuttin arvo päivitetään poistamalla siitä ainoastaan kumottavia kaavamääräyksiä sisältävien kaavakohteiden geometriat vain siinä tapauksessa, että kyseinen osa kaavan alkuperäisestä alueesta halutaan jättää kokonaan kaavan suunnittelualueen ulkopuolelle. Suunnittelualueen ulkopuolelle jätettävälle alueelle ei saa olla kohdistua kumoamattomia kaavamääräyksiä tai -suosituksia.
 {% include common/clause_end.html %}
 
 ### Kaavamuutokset ja vaihekaavat
