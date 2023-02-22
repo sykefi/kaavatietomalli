@@ -69,10 +69,14 @@ Kunkin yhdellä kielellä annetun LanguageString-tyyppisen merkkijonon enimmäis
 
 #### Tekstiarvojen käyttö
 
-Tekstimuotoisina annettujen kaavamääräysten ja niiden lisätietojen koneellinen tulkittavuus on monimutkaisempaa, epätäsmällisempää ja epäluotettavampaa kuin kuvattaessa sama ohjausvaikutus koodistojen arvojen tai numeeristen arvojen avulla. Tekstimuotoiset arvot ovat kuitenkin toisinaan tarpeen, koska kaikkia mahdollisia yksityiskohtaisia kaavamääräystietoja ei ole mielekästä koodittaa. Ihmisen tulee todennäköisesti aina tarkistaa tekstimuotoisten kaavamääräysten tulkinta, mikä heikentää konetulkittavan kaavatiedon käsittelytehokkuutta. Tämän vuoksi tekstimuotoisia kaavamääräysten ja niiden lisätietojen arvoja ei tule käyttää tarpeettomasti, esimerkiksi kuvaamaan uudelleen jo kaavamääräyslajikoodin otsikkoon, määritelmään tai kuvaukseen sisältyvää sisältöä.
+Tekstimuotoisina annettujen kaavamääräysten koneellinen tulkittavuus on monimutkaisempaa kuin kuvattaessa sama ohjausvaikutus koodistojen arvojen tai numeeristen arvojen avulla. Tekstimuotoiset arvot ovat kuitenkin usein tarpeen, koska kaikkia mahdollisia yksityiskohtaisia kaavamääräyksiä ei ole mielekästä tai edes mahdollista koodittaa. Ihmisen tulee todennäköisesti aina tarkistaa tekstimuotoisten kaavamääräysten tulkinta, mikä heikentää kaavatiedon koneellista tulkintaa. Tämän vuoksi tekstimuotoisia kaavamääräysten ja niiden lisätietojen arvoja tulee käyttää kuvaamaan vain näitä täydentävää tai täsmentävää sisältöä.
 
-{% include common/clause_start.html type="req" id="laatu/vaat-vain-tarpeelliset-tekstiarvot" %}
-Mikäli [Kaavamaarays](dokumentaatio/#kaavamaarays)- tai [Lisatieto](dokumentaatio/#lisatieto)-luokkien ```arvo```-attribuuteille on sallittu nollasta poikkeava määrä [TekstiArvo](dokumentaatio/#tekstiarvo)-tyyppisiä arvoja, tulee niitä käyttää ainoastaan tapauksissa, joissa teksti on välttämätön täydentämään kaavamääräyksen tai lisätiedon muiden attribuuttien avulla kuvattua merkitystä. Mikäli sama ohjausvaikutus saavutetaan myös jättämällä [TekstiArvo](dokumentaatio/#tekstiarvo)-tyyppinen arvo pois, ei sitä tule käyttää.
+{% include common/clause_start.html type="rec" id="laatu/suos-vain-tarpeelliset-tekstiarvot" %}
+Mikäli [Kaavamaarays](dokumentaatio/#kaavamaarays)- tai [Lisatieto](dokumentaatio/#lisatieto)-luokkien ```arvo```-attribuuteille on annettu nollasta poikkeava määrä [TekstiArvo](dokumentaatio/#tekstiarvo)-tyyppisiä arvoja, tulee niitä käyttää lähtökohtaisesti täydentämään tai täsmentämään kaavamääräyksen tai lisätiedon muiden attribuuttien avulla kuvattua merkitystä.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-tekstiarvot-luokittelu" %}
+Mikäli [Kaavamaarays](dokumentaatio/#kaavamaarays)-luokan ```arvo```-attribuutille on annettu nollasta poikkeava määrä [TekstiArvo](dokumentaatio/#tekstiarvo)-tyyppisiä arvoja, tulee [SanallinenMääräys](dokumentaatio/#sanallinenmaarays)-luokan koodistoarvon tai -arvojen avulla annotoida eli luokitella määräyksen sisältö.
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-otsikointi-nimi" %}
