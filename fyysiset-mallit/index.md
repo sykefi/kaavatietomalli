@@ -1,3 +1,4 @@
 ---
-layout: "redirect-to-module-default"
+layout: "redirect"
+redirectPath: "kehitys/ak-yk-tietomallit/"
 ---
